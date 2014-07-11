@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	 version="3.0">
+    <servlet>
+        <servlet-name>navegacion</servlet-name>
+        <jsp-file>/navegacion.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>navegacion</servlet-name>
+        <url-pattern>/nav/principal</url-pattern>
+        <url-pattern>/nav/almacen</url-pattern>
+        <url-pattern>/nav/salidaAlmacen</url-pattern>
+        <url-pattern>/nav/servicio</url-pattern>
+        <url-pattern>/nav/serie</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

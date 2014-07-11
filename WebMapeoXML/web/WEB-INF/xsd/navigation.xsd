@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+  <xs:element name="name" />
+  <xs:element name="action" type="xs:string"/>
+  <xs:element name="url"  type="xs:string"> </xs:element>
+  
+  <xs:complexType name="NavAtt">
+      <xs:simpleContent>
+          <xs:extension base="xs:string"> 
+              <xs:attribute name="status" default="disabled"/>
+          </xs:extension>
+      </xs:simpleContent>
+  </xs:complexType>
+  
+    <xs:complexType name="nav">
+      <xs:sequence>
+        <xs:element name="home" type="NavAtt" />
+        <xs:element name="back" type="NavAtt" />
+        <xs:element name="foward" type="NavAtt" />
+        <xs:element name="filter" type="NavAtt" />
+        <xs:element name="new" type="NavAtt" />
+        <xs:element name="refresh" type="NavAtt" />
+        <xs:element name="save" type="NavAtt" />
+        <xs:element name="delete" type="NavAtt" />
+        <xs:element name="send" type="NavAtt" />
+        <xs:element name="help" type="NavAtt" />
+        <xs:element name="information" type="NavAtt" />
+        <xs:element name="out" type="NavAtt" />
+      </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="menu">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="url"/>
+          <xs:element name="navbar" type="nav"/>
+          <xs:element name="element" maxOccurs="unbounded">
+              <xs:complexType>
+                  <xs:sequence>
+                      <xs:element name="name"   type="xs:string" />
+                      <xs:element name="action" type="xs:string" />
+                  </xs:sequence>
+              </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+
+</xs:schema>

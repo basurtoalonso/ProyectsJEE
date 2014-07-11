@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<menu
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='../xsd/navigation.xsd'>
+    <url>nav/principal</url>
+    
+    <navbar>
+        <home status="enabled"></home>
+        <back status="disabled"></back>
+        <foward status="disabled"></foward>
+        <filter status="disabled"></filter>
+        <new status="disabled"></new>
+        <refresh status="disabled"></refresh>
+        <save status="disabled"></save>
+        <delete status="disabled"></delete>
+        <send status="disabled"></send>
+        <help status="enabled"></help>
+        <information status="enabled"></information>
+        <out status="enabled"></out>
+    </navbar>
+    
+    <element>
+        <name>Entrada a Almacen</name>
+        <action>nav/almacen</action>
+    </element>
+    <element>
+        <name>Salida de Almacen</name>
+        <action>nav/salidaAlmacen</action>
+    </element>
+    <element>
+        <name>Confirmacion de servicios</name>
+        <action>nav/servicio</action>
+    </element>
+    <element>
+        <name>Cambio de Posicion</name>
+        <action>cambio</action>
+    </element>
+</menu>

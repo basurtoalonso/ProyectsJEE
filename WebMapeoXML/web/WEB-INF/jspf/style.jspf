@@ -1,0 +1,21 @@
+
+<%@page import="configure.Constants"%>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacMercTarja.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacPosicion.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacImos.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacConfirmacServicios.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacDesconcon.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacRutaFed.css<%="'"%>>
+
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacEntregaContraFact.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacEntregaBoletLiberc.css<%="'"%>>
+
+
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>error.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>puerta.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>navbar.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>style_01.css<%="'"%>>
+
+
+
+

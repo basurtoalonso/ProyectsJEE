@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<menu
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='../xsd/navigation.xsd'>
+    <url>nav/salidaAlmacen</url>
+    <element>
+        <name>Entrega contra factura</name>
+        <action>entregaContraFact.jsp</action>
+    </element>
+    <element>
+        <name>Entrega con boleta de liberacion</name>
+        <action>entregaContraBoletLiberac.jsp</action>
+    </element>
+    <element>
+        <name>Solicitud de consolidacion</name>
+        <action>SolicitudConsolidacion.jsp</action>
+    </element>
+</menu>

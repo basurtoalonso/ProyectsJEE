@@ -1,0 +1,4 @@
+<%@page import="configure.Constants"%>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>jquery-1.9.1.min.js <%="'"%>></script>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>jquery.ui.core.min.js <%="'"%>></script>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>functions.js <%="'"%> ></script>
