@@ -1,0 +1,62 @@
+CREATE DATABASE IF NOT EXISTS bdusuario;
+USE bdusuario;
+
+DROP TABLE IF EXISTS `cliente`;
+CREATE TABLE `cliente` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `pasword` varchar(45) NOT NULL,
+  `nombres` varchar(45) NOT NULL,
+  `apellidos` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `telefono` varchar(45) NOT NULL,
+  `cp` varchar(45) NOT NULL,
+  `domicilio` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `cliente` (`id`,`username`,`pasword`,`nombres`,`apellidos`,`email`,`telefono`,`cp`,`domicilio`) VALUES 
+(1,'admin','1234','Victor','Basurto Alonso','basurto_nike10@hotmail.com','7535312018','60990','ejido'),
+(2,'gla','1111','gladis','basurto marroquin','gladis_guapa@hotmail.com','7535312030','60960','las torres'),
+(3,'carlitos','2222','Carlos','basurto marroquin','carlitos_fierro@hotmail.com','7535312040','60960','fracc.bugambilias'),
+(4,'david','3333','David','basurto marroquin','deivy_15@hotmail.com','7535343835','60960','and. los angeles'),
+(5,'omar','4444','Omar','basurto marroquin','omarcito_mejor@hotmail.com','7535315020','60960','col. javier mina');
+
+
+
+-- Definition of procedure `proc_cliente`
+DROP PROCEDURE IF EXISTS `proc_cliente`;
+
+DELIMITER $$
+
+SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER'  $$
+/*CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cliente`(IN nombres VARCHAR(64))*/
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cliente`()
+
+BEGIN
+
+SELECT * FROM cliente;
+
+
+END $$
+SET SESSION SQL_MODE=@TEMP_SQL_MODE   $$
+
+DELIMITER ;
+
+
+
+-- Definition of procedure `cliente_one`
+DROP PROCEDURE IF EXISTS `cliente_one`;
+
+DELIMITER $$
+
+SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER'  $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cliente_one`(id int)
+
+BEGIN
+SELECT u.id, u.username, u.pasword, u.nombres, u.apellidos, u.email, u.telefono, u.cp, u.domicilio FROM cliente u
+WHERE u.id=id ORDER BY u.id;
+END $$
+SET SESSION SQL_MODE=@TEMP_SQL_MODE  $$
+
+DELIMITER ;
