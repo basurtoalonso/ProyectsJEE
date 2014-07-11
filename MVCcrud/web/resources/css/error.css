@@ -1,0 +1,60 @@
+
+
+#wb_Form_Error
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+}
+
+#Lyr_Icono_Error{
+   background-color: transparent;
+   background-image: url(/CFS3-war/resources/images/Error.png);
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+#TxtArea_Comentarios{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 10px 10px 10px 10px;
+   text-align: left;
+   resize: none;
+}
+
+#TxtArea_Comentarios{
+   position: absolute;
+   left: 250px;
+   top: 100px;
+   width: 380px;
+   height: 53px;
+   z-index: 2;
+}
+
+#Lyr_Icono_Error{
+   position: absolute;
+   text-align: left;
+   left: 100px;
+   top: 10px;
+   width: 400px;
+   height: 80px;
+   z-index: 1;
+}
+
+#Lyr_Text_Error{
+   text-align: center;
+   font-family: arial;
+   font-size: 20px;   
+   position: absolute;
+   text-align: left;
+   left: 350px;
+   top: 40px;
+   width: 480px;
+   height: 90px;
+   z-index: 3;
+}

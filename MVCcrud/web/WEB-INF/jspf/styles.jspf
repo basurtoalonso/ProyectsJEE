@@ -1,0 +1,17 @@
+<%@page import="configure.Constants"%>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>container.css<%="'"%>><!--Estilo a menu desplegable-->
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>navbar.css<%="'"%>><!--estilo a menu principal-->
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>thickbox.css<%="'"%>>
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>informacDescon.css<%="'"%>>
+
+<!--Estilo de errores producidos-->
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>error.css<%="'"%>>
+
+<!--Estilo login-->
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>styleLogin.css<%="'"%>>
+
+<!--Icon-->
+<link rel="Shortcut Icon" href="resources/img/usu.png" type="image/x-icon" />
+
+<!--css para jAlert-->
+<link rel="stylesheet" type="text/css" href=<%="'" + Constants.ATTR_DIR_CSS%>jquery.alerts.css<%="'"%>>

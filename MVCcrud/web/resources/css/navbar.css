@@ -1,0 +1,126 @@
+
+#navbarx {
+                position:absolute;
+                z-index: 100; 
+                background-image: url(../images/bg_header.png);
+                background-repeat: repeat-x;
+                background-position: center center;
+                      width: 900px;
+                      height: 42px;
+                      top: 0px;  /*espacion entre color gris y el navbar*/
+        }
+        
+ #navbarx ul {             
+                height: 35px;
+                width: 700px;
+		padding:100px;   
+                margin: 0; 
+                padding: 8px; /*separa en navbar del container color gris*/
+                cellspacing: 0;
+                cellpadding: 0;
+                border: 0;
+                list-style-type: none;
+                top:5px;       
+    } 
+
+#navbarx ul li {   
+                display: inline; 
+                width: 30px;
+                height: 30px;
+                border:0px;
+          
+    } 
+
+#navbarx ul li a { 
+		text-decoration: none; 
+                top: 50px;
+		padding: 7px 7px 7px 7px; 
+		color: black; 
+		background-image: url(../images/bg_button.png);
+		background-repeat: repeat-x;
+		background-position: center center;
+		border: 0px #696969 solid;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+                
+               
+    } 
+	
+	#navbarx ul li  a:hover{ 
+		background-image: url(../images/bg_button_hover.png);
+		background-repeat: repeat-x;
+		background-position: center center;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		color: #ffffff;
+    } 
+	#navbarx ul li a img { 
+	
+		border:0px;
+	}
+
+
+              
+        
+        
+#navbarx ul li #logo, img 
+{
+   top:5px;
+   background:transparent;
+   border: 0px;
+   height:28px;          
+}
+        
+        
+body
+{
+   margin: 0;
+   padding: 50;  /*baja todo el navbar del container color gris*/
+   background-color: #FAFAFA;
+   color: #000000;
+}
+
+
+#menu {
+padding: 5px;
+}
+
+#menu li {  
+display: INLINE;
+}
+
+#menu li a {  /*estilo a navbar*/
+font-family: Verdana, Arial, Helvetica, sans-serif;font-weight: bold;
+font-size: 16px;
+text-decoration: none;
+background-color: transparent;
+color: #ffff99;
+}
+
+#menu li a:hover{
+background-color: transparent;
+color: #CCFF00;
+font-size: 13px;
+}
+
+#about {  /*estilo para el margen doble linea color negro*/   
+margin-top: 10px; /*baja en top al margen doble*/   
+height: 300px;
+margin-left: 190px;
+margin-right: 0px;
+margin-bottom: 0px;
+border-style: double;
+border-color: #000000;
+padding-top: 40px;
+padding-right: 20px;
+padding-bottom: 10px;
+padding-left: 20px;
+}
+
+
+
+

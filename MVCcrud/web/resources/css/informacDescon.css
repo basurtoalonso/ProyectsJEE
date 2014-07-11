@@ -1,0 +1,868 @@
+
+#Txt_Username
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#wb_Text_Username
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Username div
+{
+   text-align: left;
+}
+#wb_Text_Password
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Password div
+{
+   text-align: left;
+}
+#Txt_Password
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#Txt_Apellidos
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#Txt_Nombres
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#wb_Text_Nombres 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Nombres div
+{
+   text-align: left;
+}
+#wb_Text_Apellidos 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Apellidos div
+{
+   text-align: left;
+}
+#Txt_Cel
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#Txt_Email
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#wb_Text_Email
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Email div
+{
+   text-align: left;
+}
+#wb_Text_Buq
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Buq div
+{
+   text-align: left;
+}
+#Txt_Document
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#wb_Text_Document 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Document div
+{
+   text-align: left;
+}
+#wb_Text_Status 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Status div
+{
+   text-align: left;
+}
+#Txt_Status
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#Txt_Ie
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#wb_Text_Ie
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Ie div
+{
+   text-align: left;
+}
+#wb_Text_Vrn
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Vrn div
+{
+   text-align: left;
+}
+#Txt_Vrn
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#Txt_Domicilio
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+
+#Txt_fotop
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+
+#wb_Text_fotop
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+
+#wb_Text_Domicilio
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Domicilio div
+{
+   text-align: left;
+}
+
+#wb_Text_fotop div
+{
+   text-align: left;
+}
+
+#wb_Text_Sel 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Sel div
+{
+   text-align: left;
+}
+#Txt_CP
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+
+#Lyr_Container
+{
+   background-color: transparent;
+}
+#wb_Text_Line 
+{
+   background-color: transparent;
+   border: 0px #000000 solid;
+   padding: 0;
+   text-align: left;
+}
+#wb_Text_Line div
+{
+   text-align: left;
+}
+#Txt_Line
+{
+   border: 1px #A9A9A9 solid;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   background-color: #FFFFFF;
+   color :#000000;
+   font-family: Arial;
+   font-size: 13px;
+   padding: 2px 2px 2px 2px;
+   text-align: center;
+   vertical-align: middle;
+}
+#wb_uid1
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+
+#wb_uid15
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 11.5px;
+}
+
+#Lyr_Container
+{
+   position: absolute;
+   text-align: left;
+   left: 340px;
+   top: 100px;
+   width: 600px;
+   height: 185px;
+   z-index: 26;
+}
+#wb_Text_Password
+{
+   position: absolute;
+   left: -10px;
+   top: 40px;
+   width: 56px;
+   height: 16px;
+   z-index: 7;
+   text-align: left;
+}
+#wb_uid2
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text_Ie
+{
+   position: absolute;
+   left: 460px;
+   top: 40px;
+   width: 37px;
+   height: 16px;
+   z-index: 8;
+   text-align: left;
+}
+#wb_uid3
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+
+#wb_uid15
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 12px;
+}
+
+
+.Btn_Agregar
+{
+   position: absolute;
+   left: 100px;
+   top: 143px;
+   width: 104px;
+   height: 25px;
+   line-height: 19px;
+   z-index: 19;
+}
+
+#Btn_Borrar
+{
+   position: absolute;
+   left: 220px;
+   top: 143px;
+   width: 104px;
+   height: 25px;
+   line-height: 19px;
+   z-index: 19;
+}
+
+#wb_Text_Vrn
+{
+   position: absolute;
+   left: 445px;
+   top: 10px;
+   width: 29px;
+   height: 16px;
+   z-index: 11;
+   text-align: left;
+}
+#wb_uid4
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text_Buq
+{
+   position: absolute;
+   left: 227px;
+   top: 40px;
+   width: 31px;
+   height: 16px;
+   z-index: 4;
+   text-align: left;
+}
+#Txt_Domicilio
+{
+   position: absolute;
+   left: 260px;
+   top: 95px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 21;
+}
+
+#Txt_fotop
+{
+   position: absolute;
+   left: 395px;
+   top: 70px;
+   width: 139px;
+   height: 28px;
+   line-height: 19px;
+   z-index: 21;
+}
+
+#wb_uid5
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#Txt_Password
+{
+   position: absolute;
+   left: 75px;
+   top: 35px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 23;
+}
+#Txt_Document
+{
+   position: absolute;
+   left: 400px;
+   top: 95px;
+   width: 200px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 17;
+}
+#wb_Text_Email
+{
+   position: absolute;
+   left: 212px;
+   top: 10px;
+   width: 43px;
+   height: 16px;
+   z-index: 9;
+   text-align: left;
+}
+#wb_uid6
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text_Status
+{
+   position: absolute;
+   left: 435px;
+   top: 70px;
+   width: 48px;
+   height: 16px;
+   z-index: 3;
+   text-align: left;
+}
+#wb_uid7
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text_Sel
+{
+   position: absolute;
+   left: 233px;
+   top: 70px;
+   width: 50px;
+   height: 16px;
+   z-index: 2;
+   text-align: left;
+}
+#Txt_CP
+{
+   position: absolute;
+   left: 260px;
+   top: 65px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 1;
+}
+#wb_Text_Document
+{
+   position: absolute;
+   left: 410px;
+   top: 100px;
+   width: 72px;
+   height: 16px;
+   z-index: 0;
+   text-align: left;
+}
+#Txt_Ie
+{
+   position: absolute;
+   left: 485px;
+   top: 35px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 19;
+}
+#wb_uid8
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_uid10
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_uid9
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text_Nombres
+{
+   position: absolute;
+   left: 2px;
+   top: 70px;
+   width: 37px;
+   height: 16px;
+   z-index: 5;
+   text-align: left;
+}
+#Txt_Status
+{
+   position: absolute;
+   left: 400px;
+   top: 65px;
+   width: 200px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 18;
+}
+#wb_uid11
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_uid12
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+#wb_Text_Line
+{
+   position: absolute;
+   left: 445px;
+   top: 130px;
+   width: 40px;
+   height: 16px;
+   z-index: 25;
+   text-align: left;
+}
+#wb_Text_Apellidos
+{
+   position: absolute;
+   left: -7px;
+   top: 100px;
+   width: 100px;
+   height: 16px;
+   z-index: 13;
+   text-align: left;
+}
+#Txt_Email
+{
+   position: absolute;
+   left: 260px;
+   top: 5px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 10;
+}
+#Txt_Cel
+{
+   position: absolute;
+   left: 260px;
+   top: 35px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 6;
+}
+#wb_Text_Username
+{
+   position: absolute;
+   left: -5px;
+   top: 10px;
+   width: 70px;
+   height: 16px;
+   z-index: 15;
+   text-align: left;
+}
+#Txt_Username
+{
+   position: absolute;
+   left: 75px;
+   top: 5px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 14;
+}
+#Txt_Nombres
+{
+   position: absolute;
+   left: 75px;
+   top: 65px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 22;
+}
+#Txt_Vrn
+{
+   position: absolute;
+   left: 485px;
+   top: 4px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 20;
+}
+
+#Txt_Line
+{
+   position: absolute;
+   left: 485px;
+   top: 125px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 24;
+}
+#Txt_Apellidos
+{
+   position: absolute;
+   left: 75px;
+   top: 95px;
+   width: 104px;
+   height: 19px;
+   line-height: 19px;
+   z-index: 12;
+}
+#wb_Text_Domicilio
+{
+   position: absolute;
+   left: 210px;
+   top: 100px;
+   width: 41px;
+   height: 16px;
+   z-index: 16;
+   text-align: left;
+}
+
+#wb_Text_Foto
+{
+   position: absolute;
+   left: 385px;
+   top: 50px;
+   width: 300px;
+   height: 16px;
+   z-index: 16;
+   text-align: left;
+}
+
+#wb_uid0
+{
+   color: #000000;
+   font-family: Arial;
+   font-size: 13px;
+}
+
+/*LCTPC*/
+#Btn_lctpc
+{
+   position: absolute;
+   left: 16px;
+   top: 142px;
+   width: 104px;
+   height: 25px;
+   line-height: 19px;
+   z-index: 19;
+}
+#wb_Text_lctpc{
+   position: absolute;
+   left: 20px;
+   top: 150px;
+   width: 50px;
+   height: 16px;
+   z-index: 2;
+   text-align: left;
+}
+
+/*INTERNET*/
+#Btn_internet{
+   position: absolute;
+   left: 115px;
+   top: 142px;
+   width: 104px;
+   height: 25px;
+   line-height: 19px;
+   z-index: 19;
+}
+#wb_Text_internet{
+   position: absolute;
+   left: 100px;
+   top: 150px;
+   width: 50px;
+   height: 16px;
+   z-index: 2;
+   text-align: left;
+}
+
+/*ALMACEN*/
+#Btn_almacen{
+   position: absolute;
+   left: 213px;
+   top: 142px;
+   width: 104px;
+   height: 25px;
+   line-height: 19px;
+   z-index: 19;
+}
+#wb_Text_almacen{
+   position: absolute;
+   left: 195px;
+   top: 150px;
+   width: 50px;
+   height: 16px;
+   z-index: 2;
+   text-align: left;
+}
+
+
+/*RUTA FEDERAL*/
+#Btn_rutaFederal{
+   position: absolute;
+   left: 297px;
+   top: 142px;
+   width: 104px;
+   height: 25px;
+   line-height: 19px;
+   z-index: 19;
+}
+#wb_Text_rutaFederal{
+   position: absolute;
+   left: 295px;
+   top: 150px;
+   width: 80px;
+   height: 16px;
+   z-index: 2;
+   text-align: left;
+}
+
+#wb_Text_tipoSerie{
+   position: absolute;
+   left: 160px;
+   top: 130px;
+   width: 120px;
+   height: 16px;
+   z-index: 2;
+   text-align: left;
+}
+
+
+

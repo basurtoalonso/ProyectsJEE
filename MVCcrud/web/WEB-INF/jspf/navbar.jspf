@@ -1,0 +1,19 @@
+<%@page import="configure.Constants"%>
+    
+<div id="navbarx">    
+        <ul> 
+            <li><a id="logo" href="#"><img class="img-logo" src=<%= "'"+Constants.ATTR_DIR_IMAGES%>LCTPC_IE6.png<%="'"%>></a></li> 
+            <li><a href="#" id="nb_Start"  title="Principal"   onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>home5.png<%="'"%>></a></li> 
+            <li><a href="#" id="nb_Back"   title="Atras"   onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>arrow-left.png<%="'"%>></a></li> 
+            <li><a href="#" id="nb_Next"   title="Adelante"  onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>arrow-right.png<%="'"%>></a></li>
+            <li><a href="#" id="nb_View"   title="Buscar"  onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>eye2.png<%="'"%>></a></li> 
+            <li><a href="#" id="nb_New"    title="Nuevo"  onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>file4.png<%="'"%>></a></li> 
+            <li><a href="#" id="nb_Update"  title="Reiniciar"  onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>loop.png<%="'"%>></a></li> 
+            <li><a href="#" id="nb_Save"   title="Guardar"  onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>floppy.png<%="'"%>></a></li> 
+            <li><a href="#" id="nb_Delete" title="Eliminar" onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>delete.png<%="'"%>></a></li>
+            <li><a href="#" id="nb_Send"   title="Enviar" onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>envelope.png<%="'"%>></a></li>
+            <li><a href="#" id="nb_Help"   title="Ayuda" onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>question.png<%="'"%>></a></li>
+            <li><a href="#" id="nb_Info"   title="Información" onClick="f_KeyPressMenuSave(this.id);return false;">    <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>info.png<%="'"%>></a></li>
+            <li><a href="#" id="nb_Exit"   title="Imprimir" onClick="f_KeyPressMenuSave(this.id);return false;">     <img src=<%="'"+Constants.ATTR_DIR_IMAGES_MENU%>exit.png<%="'"%>></a></li> 
+        </ul>  
+</div> 

@@ -1,0 +1,16 @@
+<%@page import="configure.Constants"%>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>form_usuario.js <%="'"%>></script>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>functions.js <%="'"%>></script>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>jquery.js <%="'"%>></script>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>thickbox.js <%="'"%>></script>
+
+<!--js para jAlert-->
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>jquery.alerts.js <%="'"%>></script>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>jquery-1.4.2.min.js <%="'"%>></script>
+
+
+
+<!--falta definir en paginas-->
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>jquery-1.9.1.min.js <%="'"%>></script>
+<script type="text/javascript" src=<%="'" + Constants.ATTR_DIR_JS%>jquery.ui.core.min.js <%="'"%>></script>
+

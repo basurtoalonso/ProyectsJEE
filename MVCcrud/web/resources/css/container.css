@@ -1,0 +1,76 @@
+
+#img { 
+    background-image: url(../resources/img/admin.png);          
+}
+
+#loading {
+    top: -20px;
+    margin: auto;
+    position: absolute;
+    z-index: 1000;
+    width: 400px;
+    height: 400px;
+    /*background: url(img/load.gif) no-repeat;
+    display:none;*/
+} 
+
+#containerr{
+    box-shadow:  5px -5px 5px #666666;
+    width: 900px;
+    padding: 1px;
+    text-align: left;
+    background: #E1E9EB;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    border-width: 0px;
+    border-style: solid;
+    position: relative;
+}
+
+a, a:link, a:visited {
+    color: yellow; text-decoration: underline;
+    color: #009999;
+    text-decoration: none;
+}
+
+#linkList h3{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border-bottom: 3px solid #000; 
+    text-align: center;
+}
+
+#linkList {
+    position: absolute;
+    top: 55px;
+    left: 12px;
+    width: 180px;
+    font-size: 90%;
+    border-bottom: 3px solid #000; 
+}
+
+#linkList ul {
+    list-style: none;
+}
+
+#linkList ul li {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#linkList a, #linkList a:link, #linkList a:visited {
+    color: #000000;  /*color de letra a menu clasificacion de peliculas*/
+}
+
+#linkList a:hover {
+    color: #ffffff;
+    text-decoration: none; 
+    width: 150px;
+}
+
+
+
+
+
