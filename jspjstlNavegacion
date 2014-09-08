@@ -1,0 +1,103 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.ArrayList"%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$('#nav').focus().on('keypress', function(e) {
+			var p = e.which;
+			if (p === 13) {
+				$('#formNav').submit();
+			}
+		});
+
+		$("#nav").dblclick(function() {
+			$('#formNav').submit();
+		});
+	});
+</script>
+
+<style type="text/css">
+.styleSelect {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.styleSelect select {
+	font-size: 22px;
+	padding: 8px;
+	margin: -5px -27px -5px -7px;
+	width: 380px;
+	height: 127px;
+}
+</style>
+
+
+<title>Expression Language</title>
+<%!ArrayList<String> lista = new ArrayList<String>();%>
+
+<%
+	lista.clear();
+	lista.add("elektra");
+	lista.add("bancoazteca");
+	lista.add("iusacell");
+	lista.add("bodega de remates");
+	lista.add("tiendas neto");
+	lista.add("credimax");
+	lista.add("TV Azteca");
+	lista.add("presta prenda");
+	lista.add("italika");
+	request.setAttribute("empresas", lista);
+%>
+
+
+</head>
+<body>
+	<%--eq ne lt ge le --%>
+
+	<c:if test='${pageContext.request.method eq "POST" }'>
+		<h2>
+			La empresa seleccionada por Scriptles es:
+			<%=request.getParameter("selectEmpresas")%></h2>
+		<h2>La empresa seleccionada por EL es: ${param.selectEmpresas}</h2>
+		<a href="PruebaEL.jsp">Regresar</a>
+		<form name="r">
+			<input name="a" value="${param.selectEmpresas}">
+		</form>
+	</c:if>
+
+	<c:if test="${pageContext.request.method eq 'GET' }">
+		<center>
+			<form method="POST" action="PruebaEL.jsp" id="formNav">
+				class="styleSelect">
+				<select name="selectEmpresas" size="10" id="nav">
+					<c:forEach items="${empresas}" var="e" varStatus="incrementable">
+						<option
+							style="background: ${((incrementable.index % 2) == 0) ? '#D9E5F2' : '#ABC6E2'}"
+							${incrementable.count==1 ? 'selected': ''} value="${e}">
+							<c:out value="${incrementable.count}"></c:out>.-${fn:toUpperCase(e)}
+						</option>
+					</c:forEach>
+				</select><br>
+				<br> <input type="submit" value="Registrar Empresa"
+					name="Registrar Empresa">
+			</form>
+		</center>
+	</c:if>
+
+</body>
+</html>
+
