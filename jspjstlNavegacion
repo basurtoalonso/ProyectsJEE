@@ -101,3 +101,318 @@
 </body>
 </html>
 
+import javax.swing.*;
+import javax.swing.border.*;        
+import java.awt.*;                  
+import java.awt.event.*;                                 
+import javax.swing.plaf.metal.*;
+import javax.swing.table.*;
+import java.text.DecimalFormat;
+
+ public class fifo extends JFrame implements ActionListener{
+    public JLabel eti1,Entradas;
+    public JButton botFIFO,botROBIN, botAgregar, grafi;     
+    public JTextField txt1,txt2,txt3;
+    public Border lineaNegra=BorderFactory.createLineBorder(Color.black);                               
+    public JProgressBar current;         
+  	Font Fuente= new Font("TimesRoman",Font.BOLD,18);  	    		                    
+    public JPanel pane1Jprog;
+    public String[] columnas={"Procesos","Tinicial","Tejecución","T/entrada","Tfinal","Tiem/Serv","Tiem/Esper","Eficiencia"}; 
+
+    public int np=0;
+    public int[] ini= new int[20];
+    public int[] cpu= new int[20];
+    public int[] ent= new int [20];
+    public int[] fin= new int [20];
+    public double[] T= new double [20];
+    public double[] E= new double [20];
+    public double[] I= new double [20];
+    public JPanel C;
+    public int nump, incremento;
+    public double sumaT=0, sumaE=0, sumaI=0;
+    public  DecimalFormat form= new DecimalFormat("0.00");
+    public String [] listamedias= {"Media T","Media E","Media I"};
+    public JComboBox combo;  
+    public String select;  
+    private Grafica grafico;
+      		  
+    public void fifo(){   
+    Container contenedor=getContentPane();
+    setLayout(null);                          
+	setTitle("           <<<ALGORITMOS DE PLANIFICACION DEL PROCESADOR>>>");
+    setVisible(true);
+    C=new JPanel();
+    
+    combo=new JComboBox(listamedias);
+	combo.reshape(90,175,100,25);
+    add(combo);
+    combo.addActionListener(this);
+    contenedor.add(combo);    	
+    
+    botAgregar=new JButton("AGREGAR");
+    botAgregar.reshape(385,20,130,25);
+	add(botAgregar);
+	botAgregar.setBackground(Color.white);
+    botAgregar.setForeground(Color.black);
+    botAgregar.addActionListener(this);
+    botAgregar.setBorder(lineaNegra);
+        
+    botFIFO=new JButton("Algoritmo Fifo");
+    botFIFO.reshape(385,130,130,25);
+	add(botFIFO);
+	botFIFO.setBackground(Color.white);
+    botFIFO.setForeground(Color.black);
+    botFIFO.addActionListener(this);
+    botFIFO.setBorder(lineaNegra);
+     	 	
+    pane1Jprog=new  JPanel();
+    pane1Jprog.reshape(370,70,165,32);
+    pane1Jprog.setBorder(lineaNegra);
+    add(pane1Jprog); 
+    	     
+    current=new JProgressBar(50,2000);           
+    current.setValue(0);
+    current.setStringPainted(true);
+    pane1Jprog.add(current);           
+                 	
+    JPanel pane2Entrad=new JPanel();
+    pane2Entrad.setBorder(lineaNegra);      
+    pane2Entrad.reshape(10,20,350,130);
+    add(pane2Entrad);
+    	                                       	
+    grafi=new JButton("GRAFICAR");
+    grafi.reshape(225,175,130,25);
+    add(grafi);
+    grafi.setBackground(Color.white);
+    grafi.setForeground(Color.black);
+    grafi.addActionListener(this);
+    grafi.setBorder(lineaNegra);
+    add(pane2Entrad);   
+	  
+	Entradas=new JLabel("ENTRADAS");
+    Entradas.setBounds(135,25,140,20);
+    add(Entradas);
+    Entradas.setFont(Fuente);
+    add(pane2Entrad);   
+    	   	   	
+    eti1=new JLabel("Numero De Procesos:");
+    eti1.setBounds(20,50,140,20);
+    add(eti1); 
+    txt1 = new JTextField();
+    txt1.setBounds(270,50,75,23);
+    add(txt1); 
+    add(pane2Entrad); 
+              
+    eti1=new JLabel("Tiempo Inicial:");
+    eti1.setBounds(20,80,240,20);
+    add(eti1);
+    txt2=new JTextField();
+    txt2.setBounds(270,80,75,23);
+    add(txt2);     
+    add(pane2Entrad); 
+        
+    eti1=new JLabel("Tiempo De Ejecución:");
+    eti1.setBounds(20,110,210,20);
+    add(eti1);      
+    txt3=new JTextField();
+    txt3.setBounds(270,110,75,23);
+    add(txt3);
+    add(pane2Entrad);
+    
+ //Instancia de la clase externa Grafica!!	          
+    grafico = new Grafica();
+             
+  //##########################################################################################         
+    C.setBorder(BorderFactory.createTitledBorder("                                                     [ALGORITMO FIFO]")); 
+    C.setBackground(new Color(110,190,191));  
+    C.setBounds(10,215,550,165); 
+    JTable tabla = new JTable(new Object[0][],columnas);
+    tabla.setPreferredScrollableViewportSize(new Dimension(530, 110));
+    JScrollPane scroll = new JScrollPane(tabla);  
+    scroll.setBorder(lineaNegra);
+    C.add(scroll);      
+    add(C);
+    //validate();                         					      			           
+	} 
+	
+	public void SIMULAR(){
+    int numero=0;} 
+	    
+	public void HiloBarra(){ //Barra Jprogress       		            
+    Runnable Runnable1=new Runnable(){  
+    int num=0;	                  
+    public void run(){
+    while(num<2000){             
+    current.setValue(num);                                                           
+    try{
+    Thread.sleep(10);
+    }catch(InterruptedException e){;}
+    num+=95;                            
+    }}};                
+    Thread hilo1=new Thread (Runnable1);
+    hilo1.start();}
+    	   	   
+	public void SetJobs(int ti, int tcpu){ //Agregar Tini y Tejec
+	nump=Integer.parseInt(txt1.getText());  	
+    for(int i=0; i<nump; i++){  
+    ini[np]=ti;
+    cpu[np]=tcpu;
+    }
+    np+=1;
+    } 
+  
+    /*public void AlgoritFifo(){   
+    ent[0]=(ini[0]);        	 
+    fin[0]=(ini[0]+cpu[0]);
+    float p=fin[0];
+    
+    for(int i=1; i<np; i++){   	
+      if(ini[i]<=p){
+      fin[i]=(cpu[i]+fin[(i-1)]);
+      ent[i]=(fin[(i-1)]);
+      p=fin[i];
+      }
+     }
+     mediasTEI();
+    }*/
+    
+    public void AlgoritFifo(){ //algoritmo Fifo         	 
+    fin[0]=ini[0]+cpu[0];
+    float p=fin[0];
+    int ocio=0; 
+    int i=1;
+    while(i<np){
+        if(ini[i]<=p){
+      	ent[i]=fin[i-1];
+        fin[i]=(cpu[i]+fin[(i-1)]+ocio);
+        ocio=0;
+        p=fin[i];
+        i++;
+        }
+        else{
+        ocio++;
+        p++;
+        }
+    }
+    mediasTEI();//llamar calculo mediasTEI
+    }
+    
+    public void mediasTEI(){ //formulas para las Medias
+    for(int i=0; i<np; i++){   	
+    T[i]=fin[i]-ini[i];
+    E[i]=T[i]-cpu[i];
+    I[i]=cpu[i]/T[i];
+    sumaT+=T[i]/np;//media de T
+    sumaE+=E[i]/np;//media de E
+    sumaI+=I[i]/np;//media de I
+    }
+    }
+  
+    public Object[][] SetDatos(){ //Insertar Registros
+    Object[][]fila=new Object[np][8];
+    for (int i=0; i<np; i++){
+    fila[i][0]=(char)(i+65);
+    fila[i][1]=ini[i];
+    fila[i][2]=cpu[i];
+    fila[i][3]=form.format(ent[i]);
+    fila[i][4]=form.format(fin[i]);
+    fila[i][5]=form.format(T[i]);
+    fila[i][6]=form.format(E[i]);
+    fila[i][7]=form.format(I[i]);
+    }return fila;
+    } 
+       
+    public int maximoY(){ //codigo para graficar 
+    int max=0;
+    for(int i=0; i<np; i++){ 
+    if(fin[i]>max)
+    max=fin[i];
+    }
+    return max;
+    }
+  
+    public int[][] getDatos2(){ //codigo para graficar 
+    int[][] X=new int[np][5];
+    for (int i=0; i<np; i++){
+    X[i][0]=ini[i];
+    X[i][1]=cpu[i];
+    X[i][2]= fin[i];
+    X[i][3]+=T[i];
+    X[i][4]+=E[i];
+    }
+    return X;
+    } 	         	                  	   	 
+    int a=1;  
+                     	              	           	           	           	     	             	       	     	        	          	       	                                                                                             	 			                                                                                                 		    	       	  	     	        
+    public void actionPerformed(ActionEvent evento){	    	    	
+    if(evento.getSource()==botAgregar){//agregar procesos
+    try{
+    botAgregar.setText("Proceso "+"["+a+"]");
+    SetJobs(Integer.parseInt(txt2.getText()),Integer.parseInt(txt3.getText())); 
+    txt2.setText("");
+    txt3.setText(""); 
+    a++;
+    }catch(Exception ex){;} 
+    }
+    
+    if(evento.getSource()==grafi){//graficar procesos 
+    try{ 
+    grafico.setX(maximoY()-ini[0]+1);
+    grafico.setY(np);
+    grafico.setD(getDatos2());
+    grafico.repaint();
+    grafico.setVisible(true);
+    }catch(Exception ei){;}  	                                                                                                                                                                                                     
+    } 
+    
+    if(evento.getSource()==combo){//calcular Medias
+    select=combo.getSelectedItem().toString();
+    if(select.equals("Media T")){
+	JOptionPane.showMessageDialog(null, "Tiempo/Servicio "+"["+"µ="+(form.format(sumaT))+"]");	
+    }
+    else if(select.equals("Media E")){
+	JOptionPane.showMessageDialog(null, "Tiempo/Espera"+"["+"µ="+(form.format(sumaE))+"]");	
+    }
+    else if(select.equals("Media I")){
+	JOptionPane.showMessageDialog(null, "Eficiencia"+"["+"µ="+(form.format(sumaI))+"]");	
+    }	   	 	
+    }        	                                                                                                                                                                                                                                           
+    		                                                                   		  		                                   				  		  
+	else if(evento.getSource()==botFIFO){//simular procesos FIFO
+    try{
+    SIMULAR();
+    HiloBarra();  
+    AlgoritFifo();
+    }catch(Exception ex){;} 
+     
+    if(nump==np){ 
+    C.setVisible(false);
+    remove(C);
+    C=new JPanel();
+    C.setBorder(BorderFactory.createTitledBorder("[Primero En Entrar/Primero En Salir]"));
+    C.setBackground(new Color(227,192,98)); 
+    C.setBounds(10,215,550,165);
+    JTable tabla=new JTable(SetDatos(),columnas);
+    tabla.setPreferredScrollableViewportSize(new Dimension(530, 110));
+    JScrollPane scroll=new JScrollPane(tabla);
+    scroll.setBorder(lineaNegra);
+    C.add(scroll);
+    add(C);     	                                                                                                                                                                                                                                        
+    }
+    else{
+    JOptionPane.showMessageDialog(null, "Num Procesos Incorrectos!!");
+    }    	
+    }
+    }         	                                     		 	 		  		  		  		 		  		  		  	                                                                                                                               		    	      
+	   		   	    
+    public static void main(String[] Vict){  	
+//    MetalLookAndFeel.setCurrentTheme(new EstiloHalloween());
+    fifo contenedor = new fifo();   
+    contenedor.setLocation(85,120);  
+    contenedor.setSize(585,430);      	   	   	    	   	      	    	   	             	     
+    contenedor.fifo();
+    }	
+  }
+  
+  
+
