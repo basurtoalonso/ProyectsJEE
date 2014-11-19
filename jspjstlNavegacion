@@ -414,5 +414,197 @@ import java.text.DecimalFormat;
     }	
   }
   
+  ----------------------------
+  import java.util.Scanner; 
+import java.text.DecimalFormat;
   
+public class AgoritmoSJN{
+Scanner LER=new Scanner(System.in);
+  
+    public int np=0, nump=0;
+    public int[] ini= new int [20];
+    public int[] cpu= new int[20];
+    public float[] ent= new float [20];
+    public int[] fin= new int [20];
+    public int repe[];
+    public int auxeje[];
+    public int auxfin[];
+    public float[] T= new float [20];
+    public float[] E= new float [20];
+    public float[] I= new float [20];
+
+  public AgoritmoSJN(){  
+        System.out.print("cantidad de procesos= ");
+        nump = LER.nextInt();
+        np = nump;
+        ini = new int[nump];
+        cpu = new int[nump];
+        ent = new float[nump];
+        fin = new int[nump];
+        repe= new int[nump];
+        auxfin= new int[nump];        
+        auxeje= new int[nump];        
+        T = new float[nump];
+        E = new float[nump];
+        I = new float[nump];
+     
+        for(int d=0;d<nump;d++){	
+        System.out.print("ti");	
+        ini[d] = LER.nextInt();
+        System.out.print("teje");
+        cpu[d]= LER.nextInt();
+        auxeje[d]=cpu[d];
+        }      
+    }
+    
+   public void AlgoritSjn(){ 	
+    ent[0]=ini[0];
+    fin[0] =cpu[0];
+    int p = fin[0];   
+    int q = 1;
+    int w=0;
+    int oc = 0;
+
+        while(q<np){
+        //System.out.println("variable p cada en total procesos"+p);
+        double o=100;
+        
+        for(int i=1;i<np;i++){        	
+        	 if(ini[i]<=p){
+            	   if(repe[i]!=cpu[i]){			 	
+        	    	if(cpu[i]<=o){ 
+                    o=cpu[i];        		  
+        		    }
+            	   }
+                 }           
+              }
+            for(int s=1;s<np;s++){             
+               if(repe[s]!=cpu[s]){
+               if(cpu[s]==o){
+              		
+               //System.out.println("dato de indice chico "+o);	
+               fin[s] = cpu[s] + p;
+              	 
+               ent[s] = fin[s]-cpu[s]+ oc;
+               repe[s]=cpu[s];
+               p = fin[s];
+               q++;
+               oc = 0;
+               //System.out.println("ti: "+ini[s]+" teje: "+cpu[s]+" tent: "+ent[s]+" tfin: "+fin[s]);
+               break;
+               }
+              }
+            }          
+        }
+         calcularTEI(); 
+         
+         DecimalFormat form= new DecimalFormat("0.00");  
+         char letras[]=new char[np];  	
+         System.out.println();
+         System.out.println("Jobs  Tin    Tej    Ten    Tfi      T        E        I");
+         for(int i=0; i<nump; i++){ 
+         letras[i] =(char)(i+65);  
+         System.out.print(letras[i]+"      ");          
+         System.out.print(ini[i]+"      ");
+         System.out.print(cpu[i]+"      ");
+         System.out.print(ent[i]+"      ");
+         System.out.print(fin[i]+"     ");
+         System.out.print(T[i]+"      ");
+         System.out.print(form.format(E[i])+"    ");
+         System.out.print(form.format(I[i])+"\n");
+         }	                 
+    }
+
+  public void calcularTEI(){
+  for(int i=0; i<np; i++){
+  T[i]=fin[i]-ini[i];
+  E[i]=T[i]-cpu[i];
+  I[i]=cpu[i]/T[i];
+  }
+  }
+  
+  public static void main(String args[]){
+  AgoritmoSJN obj= new AgoritmoSJN();
+  obj.AlgoritSjn();	
+  }
+}
+
+------------------------------------
+
+import java.util.Scanner; 
+import java.text.DecimalFormat;
+  
+public class algoritmoss{
+  Scanner LER=new Scanner(System.in);
+  public int np;
+  public int[]ini=new int[10];
+  public int[]cpu=new int[10];
+  public int[]ent=new int[10];
+  public int[]fin=new int[10];
+  public double[]T=new double[10];
+  public double[]E=new double[10];
+  public double[]I=new double[10];
+  public int Ti,Te;
+  public int k=0, a=0, i=0, AUX=0;
+    
+  public void AlgoritFifo(){   
+  System.out.print("Numero De Procesos= ");
+  np=LER.nextInt();
+  
+  for(int i=0; i<np; i++){
+  System.out.print("dame Ti= ");
+  Ti=LER.nextInt();  
+  System.out.print("dame TE= ");
+  Te=LER.nextInt();   
+  ini[i]=Ti;
+  cpu[i]=Te;	
+  }
+            	 
+  fin[0]=ini[0]+cpu[0];
+  int p=fin[0];
+  
+  for(int i=1; i<np; i++){ 	
+  if(ini[i]<=p){
+  ent[i]=fin[i-1];
+  fin[i]=cpu[i]+ent[i];
+  p=fin[i];
+  }
+  }
+  calcularTEI();
+  } 
+ 
+  public void calcularTEI(){
+  for(int i=0; i<np; i++){
+  T[i]=fin[i]-ini[i];
+  E[i]=T[i]-cpu[i];
+  I[i]=cpu[i]/T[i];
+  }
+  }
+
+  public void mostrarfifo(){ 
+  DecimalFormat form= new DecimalFormat("0.00");  
+  char letras[]=new char[np];  	
+  System.out.println();
+  
+  System.out.println("Jobs  Tin    Tej    Ten    Tfi     T       E       I");
+  for(int i=0; i<np; i++){ 
+  letras[i] =(char)(i+65);  
+  System.out.print(letras[i]+"      ");          
+  System.out.print(ini[i]+"      ");
+  System.out.print(cpu[i]+"      ");
+  System.out.print(ent[i]+"      ");
+  System.out.print(fin[i]+"     ");
+  System.out.print(T[i]+"      ");
+  System.out.print(form.format(E[i])+"    ");
+  System.out.print(form.format(I[i])+"\n");
+  }
+  }
+  
+  public static void main(String args[]){
+  algoritmoss obj= new algoritmoss();
+obj.AlgoritFifo();
+obj.mostrarfifo();
+  //obj.AlgoritSjn();	
+  }
+}
 
