@@ -1,0 +1,57 @@
+package com.bancoazteca.callcenter.validaFolioBiometrico.action;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class sumaDiasAfecha {
+
+	/*public static String SumaTiempoHora(String Hora, double horas, double min, double seg) { //SumaDiasFecha
+	    SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss");
+	    Calendar cal = Calendar.getInstance();
+	    long mili1 = 0;
+	    int h = Integer.parseInt(Hora.substring(0, 2));
+	    int m = Integer.parseInt(Hora.substring(3, 5));
+	    int s = Integer.parseInt(Hora.substring(6, 8));
+	    GregorianCalendar c = new GregorianCalendar(h, m, s);
+	    mili1 = c.getTime().getTime();
+	    java.util.Date fecha = new java.util.Date(mili1);
+	    cal.setTime(fecha);
+	    cal.add(Calendar.HOUR,(int)horas);
+	    cal.add(Calendar.MINUTE,(int)min);
+	    cal.add(Calendar.SECOND,(int)seg);
+	    java.util.Date nuevafecha = cal.getTime();
+	    
+	    return format.format(nuevafecha);
+	}*/
+	
+	
+	@SuppressWarnings("deprecation")
+	public static void main(String args[]){
+		//String result = sumaDiasAfecha.SumaTiempoHora("00:01:08", 0.2, 0.5, 0.4);
+		//System.out.println("Result: " +result);
+		
+		java.util.Date fechaMenor = new java.util.Date(2011, 03, 15, 8, 15, 23);
+		java.util.Date fechaMayor = new java.util.Date(2011, 03, 15, 11, 20, 40);
+		long diferenciaMils = fechaMayor.getTime() - fechaMenor.getTime();
+		
+		System.out.println("diferenciaMils: " +diferenciaMils);
+		
+		long segundos = diferenciaMils / 1000;
+		System.out.println("segundos: " +segundos);
+		
+		long horas = segundos / 3600;
+		
+		System.out.println("horas: " +horas);
+		
+		segundos -= horas * 3600;
+		
+		System.out.println("segundos: " +segundos);
+		
+		long minutos = segundos / 60;
+		segundos -= minutos * 60;
+		
+		System.out.println(horas+":"+minutos+":"+segundos);
+		
+	}
+}
