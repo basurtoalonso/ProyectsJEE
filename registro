@@ -1,0 +1,601 @@
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+<%@ include file="/jsp/arquitectura/fragmento/menu.jsp"%>
+<%@ page
+	import="com.bancoazteca.aclaraciones.arquitectura.utileria.Constantes"%>
+
+<%@ taglib uri="/WEB-INF/c.tld" prefix="c"%>
+
+<script type='text/javascript' src='<%=HOME%>/dwr/util.js'></script>
+<script type='text/javascript' src='<%=HOME%>/dwr/engine.js'></script>
+<script type='text/javascript' src='<%=HOME%>/dwr/interface/UtilListener.js'></script>
+<script type='text/javascript' src='<%=HOME%>/dwr/interface/AdministradorUeauDWR.js'></script>
+<script type='text/javascript' src='<%=HOME%>/dwr/interface/OperacionesLibroVirtualPeruDWR.js'></script>
+<script type='text/javascript' src="<%=HOME%>/static/js/LibroVirtualPeruUtils.js"></script>
+
+<link href="<%=HOME%>/static/style/condusef.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<%=HOME%>/static/style/calendario/alternate.css" />
+<script type="text/javascript" src="<%=HOME%>/static/js/calendario/mootools.js"></script>
+<script type="text/javascript" src="<%=HOME%>/static/js/calendario/calendar.js"></script>
+	
+	
+
+<script type="text/javascript">
+
+
+     function setFocus(){ 
+		<%String foco = (String) request.getAttribute("foco");
+			if (foco != null) {%>
+		document.getElementById("oculta").style.visibility='visible';
+		<%}%>
+		<%=foco%>                  
+	 }
+
+        function enviaAcl(){
+       	var nombre=document.ueaumexPeru.nombreCliente.value;
+       	var apellido=document.ueaumexPeru.apellidoPCliente.value;
+       	if(nombre.length>0 && apellido.length>0){
+       		muestraAclaraconesxNombre();
+       	}else{
+       		alert("Debe llenar el nombre y el primer apellido");
+       	 }
+       	}
+       	
+       function muestraAclaraconesxNombre(){
+       	var url = "<%=HOME%>";
+       	url = url + "/AdministradorActionUeaumex.do?metodo=buscarAclaracionxNombreCliente&nombreCliente=";
+       	url = url + document.ueaumexPeru.nombreCliente.value;
+       	url = url + "&apellidoPCliente=";
+       	url = url + document.ueaumexPeru.apellidoPCliente.value;
+       	url = url + "&apellidoMCliente=";
+       	url = url + document.ueaumexPeru.apellidoMCliente.value;
+       	window.open(url,"folio","width=800px,height=800px,scrollbars=yes,resizable=yes");
+       }
+                 
+     function asignaIdBienXRec(e){
+	   document.getElementById("hiddens3").innerHTML='<html:hidden name ="ueaumexPeru" property="idBienXRec" styleId="idBienXRec"/>';
+	   document.getElementById("idBienXRec").value= e;
+     }
+     
+     function asignaIdProdXCausa(id){  
+	   document.getElementById("hiddens4").innerHTML='<html:hidden name ="ueaumexPeru" property="idProdXCausa" styleId="idProdXCausa"/>';	
+	   document.getElementById("idProdXCausa").value = id;
+    }
+     
+</script>
+
+<html:html>
+
+
+<body onload="setFocus();selectDept('${idSucursal}');getSucursalDesc('${idSucursal}'); asignaIdBienXRec(-1)">
+
+   <%String idCanal = request.getParameter("idCanal").toString();%>
+    <div style="position:relative; margin:0 auto;" align="center">  
+    <img src="<%=HOME%>/static/image/bullet_2.gif" width="21" height="10">
+    
+       <%if(idCanal.equals("23")){%> 
+       <strong style="font-size:13px; font-style: Arial; color:#b12727;">Estás en: Libro de Reclamos Elektra / Captura de Reclamo. </strong>
+       <%}%>       
+       <%if(idCanal.equals("24")){%> 
+       <strong style="font-size:13px; font-style: Arial; color:#b12727;">Estás en: Libro de Reclamos Banco Azteca / Captura de Reclamo. </strong>
+       <%}%>
+       <%if(idCanal.equals("1")){%> 
+       <strong style="font-size:13px; font-style: Arial; color:#b12727;">Estás en: Reclamos Agencia Banco Azteca / Captura de Reclamo. </strong>
+       <%}%>
+       <%if(idCanal.equals("42")){%> 
+       <strong style="font-size:13px; font-style: Arial; color:#b12727;">Estás en: Reclamos Agencia Elektra / Captura de Reclamo. </strong>
+       <%}%>    
+    </div>
+	<div id="busqueda">
+		<table class="busquedaform">
+			<tr>
+				<td>
+					<img src='<%=HOME%>/static/image/ueaumex/capturacasoBar.png' />
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div style="border: 1px solid #222222;"
+		id="<bean:message key="ueau.estilo.contenedoresultados" />">
+
+		<html:form action="/RegistroAction.do" method="POST"
+			onsubmit="return false;" styleId="formulario">
+
+			<html:hidden property="metodo" />
+			<html:hidden property="idFolio" />
+			<html:hidden property="opcion" styleId="opcion" value="guardar" />
+			<html:hidden property="idCaso" />
+			<html:hidden property="cerrado" />
+			<html:hidden property="hiddenSFechaCierre" />
+			<html:hidden property="nombreAssignado" />
+			<html:hidden property="hiddenAssignado" />
+			<html:hidden property="diasProrroga" />
+			<input type="hidden" id="fechaVencimientoProrroga"
+				name="sfechaVencimientoProrroga" />
+			<input type="hidden" name="borrar" value="1" />
+			<input type="hidden" name="opcionBusqueda" value="${' '}" />
+			<input type="hidden" name="documentoABorrar" value="${' '}" />
+            <html:hidden property="descSucursal" styleId="descSucursal" />
+			<html:hidden property="estatusAclaracion" styleId="estatusAclaracion" />
+			<html:hidden property="descestatusAclaracion"
+				styleId="descestatusAclaracion" />
+			<html:hidden property="descripcionFallo" styleId="descripcionFallo" />
+			<html:hidden property="idEstatus" styleId="idEstatus" value="1" />
+			<html:hidden property="idAsignado" styleId="idAsignado" />
+			<html:hidden property="idProXCauXTip" styleId="idProXCauXTip"
+				value="-1" />
+			<html:hidden property="folioAclaraciones" styleId="folioAclaraciones" />
+			<html:hidden property="fechaReclamo" styleId="fechaReclamo" />
+			<html:hidden property="fechaIngreso" styleId="fechaIngreso" />
+			<html:hidden property="respuesta" styleId="respuesta" />
+			<html:hidden property="idConclusion" styleId="idConclusion"			
+				value="-1" />
+			<html:hidden property="idCanal" styleId="idCanal" value="${idCanal}" />
+			<!-- hidden para el valor de idorganismo -->
+			<html:hidden property="idOrganismo" styleId="idOrganismo" value="-1" />
+			<html:hidden property="numSucursal" styleId="numSucursal"
+				value="${idSucursal}" />	
+		    <html:hidden property="fechaComunicaRespuesta" styleId="fechaComunicaRespuesta" />
+
+			<table class="capturando">
+
+				<tr>
+					<td colspan="4" width="50%">
+						<p class="titles">
+							<bean:message key="etiqueta.titulo.datosGeneralesCliente" />
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<bean:message key="etiquetas.caso.sucursal" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="numSucursal"
+							value="${idSucursal}" disabled="true"></html:text>
+						<br />
+						
+						</td>
+						
+						<td class="titles" colspan="2"><span id="descSucursalSpan"></span></td>
+				</tr>
+
+				<tr>
+					<td></td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						<bean:message key="etiquetas.caso.noTarjeta" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="numTarjeta"
+							styleId="numTarjeta" />
+						<a href="#" onclick="getDatosPorNumeroTarjeta();"> <img
+								style="border: none;"
+								src="<%=HOME%>/static/image/ueaumex/buscarIcon.png" /> </a>
+						<br />
+						<div id="nTarj"></div>
+					</td>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.noCliente" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" style=" width:30px"
+							property="paisCU" styleId="paisCU" maxlength="2" />
+						<html:text styleClass="bordescaja" style=" width:30px"
+							property="canalCU" styleId="canalCU" maxlength="2" />
+						<html:text styleClass="bordescaja" style=" width:30px"
+							property="sucursalCU" styleId="sucursalCU" maxlength="4" />
+						<html:text styleClass="bordescaja" style=" width:40px"
+							property="folioCU" styleId="folioCU" />
+						<a href="#" onclick="getDatosPorClienteUnico();"><img
+								style="border: none;"
+								src="<%=HOME%>/static/image/ueaumex/buscarIcon.png" /> </a>
+						<br />
+					</td>
+
+				</tr>
+
+
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.noCuenta" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="noCuenta"
+							styleId="noCuenta" />
+						<a href="#" onclick="getDatosPorNumeroCuenta();"><img
+								style="border: none;"
+								src="<%=HOME%>/static/image/ueaumex/buscarIcon.png" alt="buscar" />
+						</a>
+						<br />
+						<div id="nCuent"></div>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td>
+						&nbsp;
+					</td>
+					<td colspan="4">
+						<div id="idenCliente"></div>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.nombre" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="nombreCliente"
+							style="width: 85%" styleId="nombreCliente" onkeyup="return validaCadena(this);" ></html:text>
+						<br />
+						<div id="nombreError"></div>
+					</td>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.apPaterno" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="apellidoPCliente"
+							styleId="apellidoPCliente" style="width: 85%" onkeyup="return validaCadena(this);" ></html:text>
+						<br />
+						<div id="aPPError"></div>
+					</td>
+
+				</tr>
+
+
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.apMaterno" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="apellidoMCliente"
+							styleId="apellidoMCliente" style="width: 85%" onkeyup="return validaCadena(this);" ></html:text>
+					</td>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.nombreTutor" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="nombreTutor"
+							style="width: 65%"></html:text>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.direccion" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="direccion"
+							style="width: 85%" styleId="direccion"></html:text>
+						<br />
+						<div id="direccionError"></div>
+					</td>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.telefono" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="telefono"
+							styleId="telefono"></html:text>
+						<br />
+						<div id="telefonoError"></div>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.correoElectronico" />
+					</td>
+					<td class="text">
+						<html:text styleClass="bordescaja" property="correoElectronico"
+							styleId="correoElectronico" style="width: 90%"></html:text>
+						<br />
+						<div id="correoError"></div>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.documentoIdentidad" />
+					</td>
+					<td class="text" colspan="2">
+						<SELECT Class="bordescaja" id="identidadText"
+							onchange="mostrarText(this);">
+							<option value='-1'>
+								Seleccione
+							</option>
+							<option value='1'>
+								DNI
+							</option>
+							<option value='2'>
+								Carnet de Extranjería
+							</option>
+						</SELECT>
+						<span id="identidadCont" style='visibility: hidden'><html:text
+								styleClass="bordescaja" property="identidad" styleId="identidad"
+								onblur="validaIdentidad();"></html:text>
+						</span>
+						<br />
+						<div id="errorIdentidead"></div>
+						<div id="errorDni"></div>				
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2"></td>
+					<td colspan="2"><br /></td>
+					
+				</tr>
+				
+				<tr>
+					<td colspan="2" width="50%">
+						<p class="titles">
+							<bean:message key="etiquetas.caso.problema" />
+						</p>
+					</td>
+					<td width="50%" colspan="2">
+					</td>
+				</tr>
+					
+				<tr>
+	               <td  class="titles"><bean:message key="etiquetas.caso.producto"/></td>
+	               
+	               <td class="text" colspan="3">
+		              <logic:present name="colProducto">
+			             <html:select name="ueaumexPeru" property="idProducto" style="width: 400px"
+				            styleId="idProducto" onchange="obtieneCausas(this.value);">
+				            <html:option value="-1">
+										<bean:message key="sagi.seleccionar" />
+							</html:option>
+				            <html:optionsCollection name="colProducto" label="fcdescripcion" value="fiidproducto" />
+			             </html:select>
+		              </logic:present>
+		              <br />
+	               </td>
+                </tr>
+                
+                <tr>
+                   <td  class="titles"><bean:message key="etiquetas.caso.causa"/></td>                      
+                   <td class="text" colspan="3">
+                      <div id="idCausas">
+                         <select disabled="disabled" style="width: 400px"></select>                  
+                      </div>            
+	              </td>	                                                     
+                </tr>
+                   
+                <tr>
+                   <td class="titles"></td>
+                   <td class="text" colspan="3"> 
+	                  <div id="errorTipifica"></div>
+	                  <br />
+	              </td>
+                </tr>
+                
+                <tr>
+					<td colspan="2"></td>
+					<td colspan="2"></td>
+				</tr>
+                         			
+				<tr>
+					<td colspan="2" width="50%">
+						<p class="titles">
+							<bean:message key="etiqueta.titulo.caso" />
+						</p>
+					</td>
+					<td width="50%" colspan="2">
+					</td>
+				</tr>
+
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.departamento" />
+					</td>
+					<td class="text">
+						<logic:present name="colDepartamento">
+							<html:select styleClass="bordescaja" name="ueaumexPeru"
+								property="idDepartamento" styleId="idDepartamento"
+								style="width: 200px">
+
+								<html:optionsCollection name="colDepartamento"
+									label="fcdescripcion" value="fiiddepartamento" />
+							</html:select>
+						</logic:present>
+						<br />
+						<div id="errorDepto"></div>
+					</td>
+
+
+
+					<td class="titles">
+						<bean:message key="etiquetas.caso.canalRespuesta" />
+					</td>
+					<td class="text">
+						<logic:present name="colMedRespuesta">
+							<html:select styleClass="bordescaja" name="ueaumexPeru"
+								property="idMedResp" styleId="idMedResp" style="width: 200px">
+
+								<html:optionsCollection name="colMedRespuesta"
+									label="fcdescripcion" value="fiidmediorespuesta" />
+							</html:select>
+						</logic:present>
+						<br />
+						<div id="errorMedRespuesta"></div>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.naturalezaCaso" />
+					</td>
+					<td class="text">
+						<logic:present name="colNaturaleza">
+							<html:select styleClass="bordescaja" name="ueaumexPeru"
+								property="idNaturaleza" styleId="idNaturaleza"
+								style="width: 200px">
+
+								<html:optionsCollection name="colNaturaleza"
+									label="fcdescripcion" value="fiidnaturaleza" />
+							</html:select>
+						</logic:present>
+						<div id="errorNaturaleza"></div>
+					</td>
+
+
+					<td class="titles">
+						<bean:message key="etiquetas.caso.bien" />
+					</td>
+					<td class="text">
+						<logic:present name="colBien">
+							<logic:notEmpty name="colBien">
+								<html:select styleClass="bordescaja" name="ueaumexPeru"
+									onchange="llenaReclamo(this.value);" property="idBienContratado" style="width: 200px">
+									<html:optionsCollection name="colBien" label="fcdescripcion"
+										value="fiidbiencontratado" />
+								</html:select>
+							</logic:notEmpty>
+							<logic:empty name="colBien">
+								<html:select styleClass="bordescaja" name="ueaumexPeru"
+									property="idBienContratado" style="width: 200px">
+									<html:option value="-1">
+										<bean:message key="sagi.seleccionar" />
+									</html:option>
+									<html:option value="1"> Producto </html:option>
+									<html:option value="2"> Servicio </html:option>
+								</html:select>
+							</logic:empty>
+						</logic:present>
+						<br />
+						<div id="errorBien"></div>
+					</td>
+
+				</tr>				
+				
+               <tr>
+                   <td class="titles">
+		               <bean:message key="etiquetas.caso.resumen" />
+	               </td>
+	               <td class="text" colspan="3">
+	                 <div id="idReclamoAjax">
+		                <logic:present name="colReclamo">
+			                <html:select name="ueaumexPeru" property="idBienXRec"
+				             styleId="idBienXRec" style="width: 400px">
+				
+				 	             <html:option value="-1">
+						             <bean:message key="sagi.seleccionar" />
+					             </html:option>
+
+				                 <html:optionsCollection name="colReclamo" label="fcdescreclamo"
+					             value="fiidbienxrec" />
+
+			                </html:select>
+		                 </logic:present>
+		                  <logic:notPresent name="colReclamo">
+				               <select disabled="disabled" style="width: 400px"></select>
+		                </logic:notPresent>
+		              
+                     </div>
+                     <div id="errorTipoProdServ"></div>
+	               </td>
+
+                </tr>
+                
+                <tr>                
+                   <td class="titles">
+		              <bean:message key="sagi.registro.montoreclamado" />
+	               </td>
+	               <td class="text">
+	                  <html:text property="montoReclamado" style="width: 50px" />
+	               </td> 
+	               
+	               <td class="titles">		              
+	               </td>
+	               <td class="text">	                  
+	               </td>	                              
+                </tr>
+				
+				<tr>
+					<td class="titles">
+						<bean:message key="etiquetas.caso.descripcion" />
+					</td>
+					<td class="text" colspan="3">
+						<html:textarea styleClass="bordescaja" property="descripcion"
+							style="width: 90%; height:60px" styleId="descripcion" />
+						<br />
+						<div id="descripError"></div>
+						<html:errors property="messageMaxDesc" />
+					</td>
+				</tr>
+				
+				<tr>
+				    <td class="titles">
+				       <bean:message key="etiquetas.caso.comentario"/>
+				    </td>
+				    <td class="text" colspan="3">
+				       <html:textarea styleClass="bordescaja" property="comentario" style="width: 85%; height:40px"/>												
+				       <br/>										
+				    </td>
+			   </tr>
+			   
+			   <tr>
+                  <td class="titles">	
+		             <bean:message key="etiquetas.caso.pedido" />
+	              </td>
+	              <td class="text" colspan="3">
+		             <html:textarea styleClass="bordescaja" property="pedido" style="width: 85%; height:40px" />
+		             <br />
+		              <div id="errorPedido"></div>
+	              </td>
+              </tr>
+			    <tr>
+                  <td class="titles">	
+		             <bean:message key="etiquetas.caso.documentosSoporte" />
+	              </td>
+	              <td class="text" colspan="3">
+		             <html:textarea styleClass="bordescaja" property="documentosSoporte" style="width: 85%; height:40px" />
+		             <br />
+		              <div id="errorDocumentosSoporte"></div>
+	              </td>
+              </tr>
+
+				<tr>
+					<td colspan="4">
+						&nbsp;&nbsp;
+						<br>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="text" colspan="4"><%@include
+							file="botonguardar.jspf"%>
+					</td>
+				</tr>
+
+			</table>
+			<div id="hiddens"></div>
+			<div id="hiddens2"></div>
+			<div id="hiddens3"></div>
+			<div id="hiddens4"></div>
+
+		</html:form>
+
+
+
+	</div>
+	<div id="<bean:message key="ueau.estilo.footer"/>">
+		<img src="<%=HOME%>/static/image/ueaumex/bazlogo.png" />
+	</div>
+
+
+</body>
+<div id="c1" style="display: none;" align="center">
+	&nbsp;
+</div>
+</html:html>
