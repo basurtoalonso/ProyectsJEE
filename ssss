@@ -1,0 +1,84 @@
+
+package aclaraciones.pruebas.main.ws;
+
+import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.web.client.RestTemplate;
+import aclaraciones.pruebas.beans.ws.RespuestaGenerica;
+import aclaraciones.pruebas.beans.ws.TaCasoWs;
+
+/*import javax.ws.rs.core.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;*/
+
+public class respuestaWS {
+		
+	public static void main(String[] args) {
+		
+	    TaCasoWs tacaso = new TaCasoWs();
+		tacaso.setApeMat("alonso");
+		tacaso.setApePat("basurto");
+		tacaso.setCanalCU("1");
+		tacaso.setFccorreoelectronico("basurto_nike10@hotmail.com");
+		tacaso.setFcdescripcion("Esto es una prueba");
+		tacaso.setFcdireccion("d.f");
+		tacaso.setFcidentidad("distrito");
+		tacaso.setFcnombre("victor");
+		tacaso.setFcnombretutor("1");
+		tacaso.setFcnumcliente("1714");
+		tacaso.setFcnumcuenta("123456789");
+		tacaso.setFcnumtarjeta("445566");
+		tacaso.setFcpedido("22");
+		tacaso.setFctelefono("5585531963");
+		tacaso.setFiidbiencontratado(-1);
+		tacaso.setFiidbienxrec(-1);
+		tacaso.setFiidcanal(1);
+		tacaso.setFiidcaso(5L);
+		tacaso.setFiiddept(-1);
+		tacaso.setFiidmediorespuesta(-1);
+		tacaso.setFiidnaturaleza(-1);
+		tacaso.setFiidorganismo(66);
+		tacaso.setFiidprodxcausa(-1);
+		tacaso.setFiidsucursal(77);
+		tacaso.setFimontoreclamado(10.55);
+		tacaso.setFolioCU("99999");
+		tacaso.setPaisCU("1");
+		tacaso.setSucursalCU("127");
+		
+		RespuestaGenerica response = new RespuestaGenerica();	
+		RestTemplate restClient = new RestTemplate();
+
+		try{
+		response = restClient.postForObject("http://10.51.193.199:8080/UEAUMex/rest/servicio/caso/setCaso", tacaso, RespuestaGenerica.class);	
+		restClient.headForHeaders("Accept=application/json");
+		
+		System.out.println("Codigo: " +response.getCodigoError());
+		System.out.println("Exito: " +response.getExito());
+		System.out.println("Mensaje: " +response.getMensaje());	
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		/*RestTemplate restTemplate = new RestTemplate();
+		Map<String, String> vars = new HashMap<String, String>();
+		vars.put("hotel", "42");
+		vars.put("booking", "21");
+		respuestaWS result = restTemplate.getForObject("http://example.com/hotels/{hotel}/bookings/{booking}", respuestaWS.class, vars);
+		System.out.println("RESULTADO: " +result);*/
+		
+		/*String uri = "http://example.com/hotels/{id}/bookings";
+		RestTemplate template = new RestTemplate();
+		Booking booking = // create booking object
+
+		URI location = template.postForLocation(uri, booking, "1");
+		System.out.println("Location: " +location);*/
+				
+	}
+}
