@@ -1,0 +1,215 @@
+package com.bancoazteca.sagi.UEAUMex.ws.beans;
+
+
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class TaCasoWs implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+	Long fiidcaso;
+	int fiidsucursal;
+	String fcnumtarjeta;
+	String fcnumcliente;
+	String paisCU;
+	String canalCU;
+	String sucursalCU;
+	String folioCU;
+	String fcnumcuenta;
+	String fcnombre;
+	String apePat;
+	String apeMat;
+	String fcnombretutor;
+	String fcdireccion;
+	String fctelefono;
+	String fccorreoelectronico;
+	String fcidentidad;
+	int fiiddept;
+	int fiidcanal;
+	int fiidorganismo;
+	int fiidmediorespuesta;
+	String fcdescripcion;
+	int fiidbiencontratado;
+	int fiidbienxrec;
+	int fiidprodxcausa;
+	int fiidnaturaleza;
+	Double fimontoreclamado;
+	String fcpedido;
+	
+	public Long getFiidcaso() {
+		return fiidcaso;
+	}
+	public void setFiidcaso(Long fiidcaso) {
+		this.fiidcaso = fiidcaso;
+	}
+	public int getFiidsucursal() {
+		return fiidsucursal;
+	}
+	public void setFiidsucursal(int fiidsucursal) {
+		this.fiidsucursal = fiidsucursal;
+	}
+	public String getFcnumtarjeta() {
+		return fcnumtarjeta;
+	}
+	public void setFcnumtarjeta(String fcnumtarjeta) {
+		this.fcnumtarjeta = fcnumtarjeta;
+	}
+	public String getFcnumcliente() {
+		return fcnumcliente;
+	}
+	public void setFcnumcliente(String fcnumcliente) {
+		this.fcnumcliente = fcnumcliente;
+	}
+	public String getPaisCU() {
+		return paisCU;
+	}
+	public void setPaisCU(String paisCU) {
+		this.paisCU = paisCU;
+	}
+	public String getCanalCU() {
+		return canalCU;
+	}
+	public void setCanalCU(String canalCU) {
+		this.canalCU = canalCU;
+	}
+	public String getSucursalCU() {
+		return sucursalCU;
+	}
+	public void setSucursalCU(String sucursalCU) {
+		this.sucursalCU = sucursalCU;
+	}
+	public String getFolioCU() {
+		return folioCU;
+	}
+	public void setFolioCU(String folioCU) {
+		this.folioCU = folioCU;
+	}
+	public String getFcnumcuenta() {
+		return fcnumcuenta;
+	}
+	public void setFcnumcuenta(String fcnumcuenta) {
+		this.fcnumcuenta = fcnumcuenta;
+	}
+	public String getFcnombre() {
+		return fcnombre;
+	}
+	public void setFcnombre(String fcnombre) {
+		this.fcnombre = fcnombre;
+	}
+	public String getApePat() {
+		return apePat;
+	}
+	public void setApePat(String apePat) {
+		this.apePat = apePat;
+	}
+	public String getApeMat() {
+		return apeMat;
+	}
+	public void setApeMat(String apeMat) {
+		this.apeMat = apeMat;
+	}
+	public String getFcnombretutor() {
+		return fcnombretutor;
+	}
+	public void setFcnombretutor(String fcnombretutor) {
+		this.fcnombretutor = fcnombretutor;
+	}
+	public String getFcdireccion() {
+		return fcdireccion;
+	}
+	public void setFcdireccion(String fcdireccion) {
+		this.fcdireccion = fcdireccion;
+	}
+	public String getFctelefono() {
+		return fctelefono;
+	}
+	public void setFctelefono(String fctelefono) {
+		this.fctelefono = fctelefono;
+	}
+	public String getFccorreoelectronico() {
+		return fccorreoelectronico;
+	}
+	public void setFccorreoelectronico(String fccorreoelectronico) {
+		this.fccorreoelectronico = fccorreoelectronico;
+	}
+	public String getFcidentidad() {
+		return fcidentidad;
+	}
+	public void setFcidentidad(String fcidentidad) {
+		this.fcidentidad = fcidentidad;
+	}
+	public int getFiiddept() {
+		return fiiddept;
+	}
+	public void setFiiddept(int fiiddept) {
+		this.fiiddept = fiiddept;
+	}
+	public int getFiidcanal() {
+		return fiidcanal;
+	}
+	public void setFiidcanal(int fiidcanal) {
+		this.fiidcanal = fiidcanal;
+	}
+	public int getFiidorganismo() {
+		return fiidorganismo;
+	}
+	public void setFiidorganismo(int fiidorganismo) {
+		this.fiidorganismo = fiidorganismo;
+	}
+	public int getFiidmediorespuesta() {
+		return fiidmediorespuesta;
+	}
+	public void setFiidmediorespuesta(int fiidmediorespuesta) {
+		this.fiidmediorespuesta = fiidmediorespuesta;
+	}
+	public String getFcdescripcion() {
+		return fcdescripcion;
+	}
+	public void setFcdescripcion(String fcdescripcion) {
+		this.fcdescripcion = fcdescripcion;
+	}
+	public int getFiidbiencontratado() {
+		return fiidbiencontratado;
+	}
+	public void setFiidbiencontratado(int fiidbiencontratado) {
+		this.fiidbiencontratado = fiidbiencontratado;
+	}
+	public int getFiidbienxrec() {
+		return fiidbienxrec;
+	}
+	public void setFiidbienxrec(int fiidbienxrec) {
+		this.fiidbienxrec = fiidbienxrec;
+	}
+	public int getFiidprodxcausa() {
+		return fiidprodxcausa;
+	}
+	public void setFiidprodxcausa(int fiidprodxcausa) {
+		this.fiidprodxcausa = fiidprodxcausa;
+	}
+	public int getFiidnaturaleza() {
+		return fiidnaturaleza;
+	}
+	public void setFiidnaturaleza(int fiidnaturaleza) {
+		this.fiidnaturaleza = fiidnaturaleza;
+	}
+	public Double getFimontoreclamado() {
+		return fimontoreclamado;
+	}
+	public void setFimontoreclamado(Double fimontoreclamado) {
+		this.fimontoreclamado = fimontoreclamado;
+	}
+	public String getFcpedido() {
+		return fcpedido;
+	}
+	public void setFcpedido(String fcpedido) {
+		this.fcpedido = fcpedido;
+	}
+	
+}
