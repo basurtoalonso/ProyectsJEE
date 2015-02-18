@@ -1,0 +1,76 @@
+package com.bancoazteca.sagi.UEAUMex.ws.controller;
+
+
+import java.util.ArrayList;
+
+import javax.ws.rs.core.MediaType;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.bancoazteca.aclaraciones.arquitectura.utileria.Constantes;
+import com.bancoazteca.sagi.UEAUMex.ws.beans.TaCasoWs;
+import com.bancoazteca.sagi.UEAUMex.ws.facade.CasoFacade;
+import com.bancoazteca.sagi.UEAUMex.ws.respuestaws.RespuestaGenerica;
+
+
+@Controller
+@RequestMapping(value = "/caso")
+public class CasoServiceController {
+
+
+	@RequestMapping(value = "/setCaso", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON}, produces = {MediaType.APPLICATION_JSON})
+	public @ResponseBody RespuestaGenerica setCaso(@RequestBody TaCasoWs casows) { 
+		
+	   RespuestaGenerica respuesta = null;
+	   CasoFacade facade = new CasoFacade(Constantes.STR_PERU);
+	   				
+	   try{
+		   		  
+		    respuesta = facade.insertaCasoPeru(casows);
+		    
+	   }catch(Exception e){
+		   e.printStackTrace();		   
+	   }
+	   
+	   return respuesta;	
+	}
+
+		
+	@RequestMapping(value = "/getCatalogoProdServ/{idBien}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON})
+	public @ResponseBody ArrayList<Object> getCatalogoProdServ(@PathVariable("idBien")Long idBien){
+		
+		CasoFacade facade = new CasoFacade(Constantes.STR_PERU);
+		ArrayList<Object> catalogoReclamo = new ArrayList<Object>();
+		
+		try{
+			
+			catalogoReclamo = facade.obtenerCatalogoBienxRec(idBien);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return catalogoReclamo;
+	}
+	
+	@RequestMapping(value = "/getCatalogoCausa/{idProducto}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON})
+	public @ResponseBody ArrayList<Object> getCatalogoCausa(@PathVariable("idProducto")Long idProducto){
+		
+		CasoFacade facade = new CasoFacade(Constantes.STR_PERU);
+		ArrayList<Object> catalogoCausa = new ArrayList<Object>();
+		
+		try{
+			
+			catalogoCausa = facade.obtenerCatalogoCausa(idProducto);
+						
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return catalogoCausa;
+	}
+		
+}
