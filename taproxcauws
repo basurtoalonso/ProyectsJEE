@@ -1,0 +1,33 @@
+package com.bancoazteca.sagi.UEAUMex.ws.beans;
+
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.bancoazteca.sagi.UEAUMex.utileria.Constantes;
+
+@XmlRootElement(name="taproxcauws")
+public class TaProXCauWs implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private Long fiidprodxcausa = Constantes.DEFAULT_LONG;
+	private String DescCausa = Constantes.DEFAULT_STRING;
+	
+	public Long getFiidprodxcausa() {
+		return fiidprodxcausa;
+	}
+	public void setFiidprodxcausa(Long fiidprodxcausa) {
+		this.fiidprodxcausa = fiidprodxcausa;
+	}
+	public String getDescCausa() {
+		return DescCausa;
+	}
+	public void setDescCausa(String descCausa) {
+		DescCausa = descCausa;
+	}
+	
+}
