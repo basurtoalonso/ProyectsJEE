@@ -1,0 +1,155 @@
+package com.bancoazteca.lineadirecta.service;
+
+import java.util.ArrayList;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.apache.log4j.Logger;
+
+import com.bancoazteca.aclaraciones.arquitectura.utileria.Constantes;
+import com.bancoazteca.lineadirecta.control.form.ClienteForm;
+import com.bancoazteca.lineadirecta.model.dao.transaccion.TxCatalogos;
+import com.bancoazteca.lineadirecta.model.dao.transaccion.TxSolicitud;
+import com.bancoazteca.lineadirecta.model.hibernate.Solicitud;
+
+public class ConsultaSolicitudesService {
+	private	final Logger logger = Logger.getLogger(ConsultaSolicitudesService.class.getName());	
+	private TxSolicitud txsol;
+	private TxCatalogos txcat;
+	public String consultarSolicitudesByEstatus(Long idEstatus,String fechai, String fechaf) {
+		Solicitud solicitud=new Solicitud();
+		ArrayList<Solicitud> arrSol =new ArrayList<Solicitud>();
+		JSONArray listaRegistros = new JSONArray();
+		JSONObject registroContenedor = new JSONObject();
+		txsol=new TxSolicitud();
+		try {
+			solicitud.getCatLDEstatus().setIdEstatus(idEstatus);
+			solicitud.setFechaFin(fechaf);
+			solicitud.setFechaInicio(fechai);
+			int tipo=Constantes.TX_OPERACION_CONSULTAR_SOL;
+			arrSol=txsol.consultaSolicitudes(solicitud,tipo);
+			JSONObject registro = null;
+			for(Solicitud sol:arrSol){
+	            registro = new JSONObject();
+	            if(sol.getCatLDEstatus().getIdEstatus().compareTo(idEstatus)==0){
+		            registro.put("noCuenta",sol.getNoCuenta());
+		            registro.put("noClienteUnico",sol.getNoClienteUnico());
+		            registro.put("noTarjeta",sol.getNoTarjeta());
+		            registro.put("noSucursal",sol.getNoSucursal());
+		            registro.put("estado",sol.getCatEstados().getIdEstado());
+		            registro.put("descestado",sol.getCatEstados().getDescripcion());
+		            registro.put("fechaRecepcion",sol.getFechaRecepcion());
+		            registro.put("comentarios",sol.getComentarios());
+		            registro.put("area",sol.getCatArea().getIdArea());
+		            registro.put("descarea",sol.getCatArea().getDescripcion());
+		            registro.put("idSolicitud",sol.getIdSolicitud());
+		            listaRegistros.add(registro);
+	            }
+	        }
+            registroContenedor.put("lstSolicitudes",listaRegistros);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e.getMessage());
+		}
+		return registroContenedor.toString();
+	}
+	
+	public String consultarSolicitudes(ClienteForm cliForm, int tipoOperacion) {
+		ArrayList<Solicitud> arrSol =new ArrayList<Solicitud>();
+		JSONArray listaRegistros = new JSONArray();
+		JSONObject registroContenedor = new JSONObject();
+		txsol=new TxSolicitud();
+		try {
+			
+			arrSol=txsol.consultaSolicitudes(datosSolicitante(cliForm),tipoOperacion);
+			
+			JSONObject registro = null;
+
+	        	   for(Solicitud sol:arrSol){
+	   	            registro = new JSONObject();
+			            registro.put("noCuenta",sol.getNoCuenta());
+			            registro.put("noClienteUnico",sol.getNoClienteUnico());
+			            registro.put("noTarjeta",sol.getNoTarjeta());
+			            registro.put("noSucursal",sol.getNoSucursal());
+			            registro.put("estado",sol.getCatEstados().getIdEstado());
+			            registro.put("descestado",sol.getCatEstados().getDescripcion());
+			            registro.put("fechaRecepcion",sol.getFechaRecepcion());
+			            registro.put("comentarios",sol.getComentarios());
+			            registro.put("descarea",sol.getCatArea().getDescripcion());
+			            registro.put("idSolicitud",sol.getIdSolicitud());
+			            registro.put("idEstatus",sol.getCatLDEstatus().getIdEstatus());
+			            registro.put("descEstatus",sol.getCatLDEstatus().getDescripcion());
+			            registro.put("nombreDeCliente",sol.getNombreCliente());
+			            listaRegistros.add(registro);
+	        	   
+	            }
+	        	   registroContenedor.put("lstSolicitudes",listaRegistros);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e.getMessage());
+		}
+		return registroContenedor.toString();
+	}
+
+	public ArrayList<Solicitud> detalleConsultaSolicitudes(ClienteForm cliente) {
+		Solicitud solicitud=new Solicitud();
+		ArrayList<Solicitud> arrSol =new ArrayList<Solicitud>();
+		txsol=new TxSolicitud();
+		try {
+			solicitud.setIdSolicitud(cliente.getIdSolicitud());
+			solicitud.getCatLDEstatus().setIdEstatus(cliente.getEstatus());
+			solicitud.setFechaInicio(cliente.getFechaInicial());
+			solicitud.setFechaFin(cliente.getFechaFinal());
+			int tipo=Constantes.TX_OPERACION_CONSULTAR;
+			arrSol=txsol.consultaSolicitudes(solicitud,tipo);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e.getMessage());
+		}
+		return arrSol;
+	}
+	public Solicitud datosSolicitante(ClienteForm cliente) {
+		Solicitud vo =new Solicitud();
+		try {
+
+			vo.setActivo(cliente.getActivo());
+			vo.getCatArea().setIdArea(cliente.getArea());
+			vo.setComentarios(cliente.getComentarios());
+			vo.setDescripcion(cliente.getDescripcion());
+			vo.setDescSucursal(cliente.getDescSucursal());
+			vo.setDetalleCierre(cliente.getDetalleCierre());
+			vo.setDireccion(cliente.getDireccion());
+			vo.setEmailCliente(cliente.getEmailCliente());
+			vo.getCatEstados().setIdEstado(cliente.getIdEstado());
+			vo.getCatLDEstatus().setIdEstatus(cliente.getEstatus());
+			vo.setFechaCierre(cliente.getFechaCierre());
+			vo.setFechaCompromiso(cliente.getFechaCompromiso());
+			vo.setFechaRecepcion(cliente.getFechaRecepcion());
+			vo.setFuncionario(cliente.getFuncionario());
+			vo.getCatCanal().setIdCanal(cliente.getIdCanalCaptura());
+			vo.getClasificacion().setIdClasificacion(cliente.getIdClasificacion());
+			vo.getCatFallo().setIdFallo(cliente.getIdfallo());
+			vo.setIdSolicitud(cliente.getIdSolicitud());
+			vo.setMedioContacto(cliente.getMedioContacto());
+			vo.setNocliente(cliente.getNocliente());
+			vo.setNoClienteUnico(cliente.getNoClienteUnico());
+			vo.setNoCuenta(cliente.getNoCuenta());
+			vo.setNombreCliente(cliente.getNombreCliente());
+			vo.setNoSucursal(cliente.getNoSucursal());
+			vo.setNoTarjeta(cliente.getNoTarjeta());
+			vo.setTelefono(cliente.getTelefono());
+			vo.setFechaInicio(cliente.getFechaInicial());
+			vo.setFechaFin(cliente.getFechaFinal());
+			vo.getClasificacion().getCatProducto().setIdProducto(cliente.getIdProducto());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(e.getMessage());
+		}
+		return vo;
+	}
+}
