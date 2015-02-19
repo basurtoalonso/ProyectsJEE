@@ -1,0 +1,34 @@
+<html><head><script type="text/javascript" src="estilos/jquery-1.4.2.min.js"></script>
+         <script>
+            $(document).ready(function() {
+                $("#acordion .seccion").click(function() {
+                    if ($(this).next("div").is(":visible")) {
+                        $(this).next("div").slideUp("slow");
+                    } else {
+                        $("#acordion .jobform").slideUp("slow");
+                        $(this).next("div").slideToggle("slow");
+                    }
+                });
+                $("#acordion .seccion").prepend('<div class="close_box"><span>X</span></div>');
+                $('.close_box').click(function() {
+                    alert('Cerrar Formulario');
+                    $(this).parent().stop(true, true);
+                });
+            });
+        </script>
+        <style type="text/css">
+            .seccion{background-color:#d3d7cf;padding:8px;text-align:center;margin:15px 0px; height:55px}
+            #acordion .jobform {display:none;cursor:pointer;}
+            #acordion .seccion h2{cursor:pointer;}
+            .close_box{position:relative;top:-5px;right:-5px;color:red;z-index:10;text-align:right;}
+            .close_box span{cursor:pointer;}
+        </style>
+        </head><div id="acordion">
+                    <div class="seccion"><font color="#000">ABRIR LOGIN</font></a></div><div class="jobform">
+                       <center>
+                        <form method="POST" action="index.php" onSubmit="return validarForm(this);">
+                            <table width="302" height="141" style="background:#CCCCCC; border:2px solid #666666; letter-spacing:normal">
+                             <tr><tr>                       
+                            </table>
+                        </form>
+                        </center></div></div></html>
