@@ -79,3 +79,34 @@ http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=custom-json-spr
 		</div>
 	</body>
 </html>
+
+----------------------------------
+public class Pedido {  
+    private String codigo;  
+    private String descripcion;  
+    private Set<Producto> productos;  
+      
+    public Pedido(){  
+        this.productos = new HashSet<Producto>();  
+    }  
+      
+    // los getters, setters, hashCode, equals,..  
+      
+    public void addProducto(Producto producto){  
+        this.productos.add(producto);  
+    }  
+      
+    // Esto no es del todo correcto, desencapsulación... pero en modo tutorial está ok.  
+    public Set<Producto> getProductos(){  
+        return this.productos;  
+    }  
+} 
+---------------------
+public class Producto {  
+    private String  codigo;  
+    private Integer unidades;  
+      
+    public Pedido(){}  
+      
+    // los getters, setters, hashCode, equals,..              
+}  
