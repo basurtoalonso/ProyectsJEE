@@ -1,0 +1,81 @@
+http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=custom-json-spring-mvc
+
+
+
+<html>
+<head>
+		<script src="jss/jquery-1.11.2.min.js"></script> 
+	    <script type="text/javascript" src="jss/jquery.json-2.2.min.js"></script>
+			           
+	 <script type="text/javascript">
+		var Producto = function(codigo, unidades){
+			   this.codigo	 = codigo;
+			   this.unidades = unidades;
+		}
+		var Pedido = function(codigo, descripcion){
+			   this.codigo		= codigo;
+			   this.descripcion	= descripcion;
+			   this.productos  = new Array();
+		}
+		Pedido.prototype.addProducto = function(prod){
+	 		   this.productos.push(prod);
+		}
+		Pedido.prototype.getProductos = function(){
+	 		   return this.productos;
+		}
+
+		$(document).ready(function() {							
+			$('#accept3').click(function() {
+				var pedidoObj = getFormJson();
+				var objJason=JSON.stringify(pedidoObj);
+				alert(objJason);
+				return false;			
+			});
+		});	
+
+		function getFormJson(){
+	           var pedidoObj    = new Pedido($('#pedidoCodigo').val(), $('#pedidoDescripcion').val());
+               var prodCodigos  = $("input[name='productoCodigo']");
+               var prodUnidades = $("input[name='productoUnidades']");
+               jQuery.each(prodCodigos, function(pos, item){
+            	   pedidoObj.addProducto(new Producto(prodCodigos[pos].value, prodUnidades[pos].value));
+               });
+              return pedidoObj;
+		};
+ 	</script>
+			 <form id="pedidoForm" name="pedidoForm" method="get">
+				<div class="field">       
+					<label for="pedidoCodigo">C&oacute;digo del pedido:</label>
+					<input type="text" id="pedidoCodigo" name="pedidoCodigo" size="5" value="CPE1"/>
+				</div>
+				<div class="field">   
+					<label for="pedidoDescripcion">Descripci&oacute;n del pedido:</label>
+					<input type="text" id="pedidoDescripcion" name="pedidoDescripcion" size="20" value="Descripci&oacute;n Pedido"/>
+				</div>			            
+				<div id="productosPanel" style="margin-top:0.8em">
+					<div class="productoPanel">
+						<div class="field">
+							<label for="productoCodigo">C&oacute;digo del producto:</label>
+							<input type="text" name="productoCodigo" size="5" value="CP1"/>
+						</div>
+						<div class="field">
+							<label for="productoUnidades">Num. Unidades:</label>
+							<input type="text" name="productoUnidades" size="5" value="4"/>
+						</div>
+					</div>
+					<div class="productoPanel">
+						<div class="field">
+							<label for="productoCodigo">C&oacute;digo del producto:</label>
+							<input type="text" name="productoCodigo" size="5" value="CP2"/>
+						</div>
+						<div class="field">
+							<label for="productoUnidades">Num. Unidades:</label>
+							<input type="text" name="productoUnidades" size="5" value="4"/>
+						</div>
+					</div>
+				</div>			
+				<input id="accept3" type="button" value="Obtiene Objeto Jason"/>
+			</form>
+		</div>
+	</body>
+</html>
