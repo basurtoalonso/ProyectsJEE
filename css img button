@@ -1,0 +1,39 @@
+
+.acept{
+        font-size:11px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:black;
+        background: url(../images/ok.png) no-repeat; /*transparents*/
+		/*#638cb5;*/
+        width:100px;
+        height:25px;
+		cursor:  pointer;
+		 outline:none; 
+		 display:block; 
+		 
+		 	/*color: #444;
+		overflow: hidden;
+		background-color: #000000;
+		color: #FFF;text-shadow: 0 -1px 1px rgba(0,0,0,0.25);background-color: #FC9200;
+		 outline:none; 
+		 display:block; */
+		 
+		}
+		
+
+.cansel{
+	        font-size:11px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:black;
+        background: url(../images/borrar.ico) no-repeat; /*transparents*/
+		/*#638cb5;*/
+        width:100px;
+        height:25px;
+		cursor:  pointer;
+		 outline:none; 
+		 display:block; 
+		
+       }
+	   
