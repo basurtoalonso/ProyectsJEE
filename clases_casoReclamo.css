@@ -1,0 +1,980 @@
+.acept {
+	text-align: right;
+	font-size: 11px;
+	font-family: Verdana, Helvetica;
+	font-weight: bold;
+	color: black;
+	background-image: url("../images/ok.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 110px;
+	height: 25px;
+}
+
+#wb_button_limpiar {
+	color: #000000;
+	font-family: Arial;
+	font-size: 18px;
+	position: absolute;
+	left: 180px;
+	top: 500px;
+	width: 200px;
+	height: 16px;
+	text-align: left;
+}
+
+.cansel {
+	text-align: right;
+	font-size: 11px;
+	font-family: Verdana, Helvetica;
+	font-weight: bold;
+	color: black;
+	background-image: url("../images/borrar.ico");
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 95px;
+	height: 25px;
+}
+
+#reclamo {
+	margin-left: 150px;
+	overflow: hidden;
+	width: 125px;
+	height: 47px;
+	font-size: 18px;
+	background: #F2F2F2;
+}
+
+#izq {
+	margin-left: -165px;
+}
+
+#reclamo select {
+	padding: 8px;
+	margin: -5px -27px -5px -7px;
+}
+
+div#container {
+	width: 610px;
+	position: relative;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+body {
+	text-align: center;
+	margin: 0;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+.Txt_nombre {
+	width: 104px;
+	height: 25px;
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#wb_Label_Nombre {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_Nombre div {
+	text-align: left;
+}
+
+#wb_Label_ApellidoP {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_ApellidoP div {
+	text-align: left;
+}
+
+.Txt_ApellidoP {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Txt_ApellidoM {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#wb_Label_ApellidoM {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_ApellidoM div {
+	text-align: left;
+}
+
+#wb_Text_Tam {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+.Txt_Documento {
+	border: 1px #000000 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Txt_DescripcionReclamo {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Txt_BienContratado {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Txt_ProductoServicio {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Txt_ProdServic {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Txt_MontoReclamo {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Txt_Pedido {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#wb_Label_DocumentoIdentidad {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_DescripcionReclamo {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_BienContratado {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#selectBien {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#selectDocumento {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#selectProducto {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#selectProdServ {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#selectCausa {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#selectnaturalezaCaso {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_ProductoServicio {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_ProdServic {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_Causa {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_Caso {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_MontoReclamo {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_Pedido {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_DocumentoIdentidad div {
+	text-align: left;
+}
+
+#wb_Label_DescripcionReclamo div {
+	text-align: left;
+}
+
+#wb_Label_BienContratado div {
+	text-align: left;
+}
+
+#selectBien div {
+	text-align: left;
+}
+
+#selectDocumento div {
+	text-align: left;
+}
+
+#selectProducto div {
+	text-align: left;
+}
+
+#selectProdServ div {
+	text-align: left;
+}
+
+#selectCausa div {
+	text-align: left;
+}
+
+#selectnaturalezaCaso div {
+	text-align: left;
+}
+
+#wb_Label_ProductoServicio div {
+	text-align: left;
+}
+
+#wb_Label_ProdServic div {
+	text-align: left;
+}
+
+#wb_Label_Causa div {
+	text-align: left;
+}
+
+#wb_Label_Caso div {
+	text-align: left;
+}
+
+#wb_Label_MontoReclamo div {
+	text-align: left;
+}
+
+#wb_Label_Pedido div {
+	text-align: left;
+}
+
+.Txt_Direccion {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#wb_Label_Direccion {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_Direccion div {
+	text-align: left;
+}
+
+#wb_Label_Email {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_Email div {
+	text-align: left;
+}
+
+.Txt_Email {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#wb_Label_NombreTutor {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_NombreTutor div {
+	text-align: left;
+}
+
+#wb_Label_Telefono {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_Telefono div {
+	text-align: left;
+}
+
+.Txt_Telefono {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Txt_NombreTutor {
+	border: 1px #A9A9A9 solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-size: 15px;
+	padding: 2px 2px 2px 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#wb_Text_Pto {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#Lyr_Container {
+	background-color: transparent;
+}
+
+#Lyr_Container {
+	position: absolute;
+	text-align: left;
+	left: 5px;
+	top: 5px;
+	width: 600px;
+	height: 185px;
+	z-index: 26;
+}
+
+#wb_Label_ApellidoP {
+	position: absolute;
+	left: 5px;
+	top: 60px;
+	width: 150px;
+	height: 16px;
+	z-index: 7;
+	text-align: left;
+}
+
+#wb_Label_NombreTutor {
+	position: absolute;
+	left: 16px;
+	top: 160px;
+	width: 250px;
+	height: 16px;
+	z-index: 8;
+	text-align: left;
+}
+
+#wb_Label_Telefono {
+	position: absolute;
+	left: 30px;
+	top: 310px;
+	width: 29px;
+	height: 16px;
+	z-index: 11;
+	text-align: left;
+}
+
+#wb_uid4 {
+	color: #000000;
+	font-family: Arial;
+	font-size: 13px;
+}
+
+#wb_Label_DocumentoIdentidad {
+	position: absolute;
+	left: 10px;
+	top: 360px;
+	width: 100px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_Label_DescripcionReclamo {
+	position: absolute;
+	left: 375px;
+	top: 470px;
+	width: 300px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_Label_BienContratado {
+	position: absolute;
+	left: 400px;
+	top: 5px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#selectBien {
+	position: absolute;
+	left: 340px;
+	top: 20px;
+	width: 200px;
+	height: 16px;
+	text-align: left;
+}
+
+#selectDocumento {
+	position: absolute;
+	left: 120px;
+	top: 355px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#selectProducto {
+	position: absolute;
+	left: 310px;
+	top: 90px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#selectProdServ {
+	position: absolute;
+	left: 310px;
+	top: 160px;
+	width: 250px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#selectCausa {
+	position: absolute;
+	left: -5px;
+	top: 440px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#selectnaturalezaCaso {
+	position: absolute;
+	left: 445px;
+	top: 215px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_Label_ProductoServicio {
+	position: absolute;
+	left: 390px;
+	top: 70px;
+	width: 230px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_Label_ProdServic {
+	position: absolute;
+	left: 390px;
+	top: 140px;
+	width: 230px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_Label_Causa {
+	position: absolute;
+	left: 265px;
+	top: 425px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_Label_MontoReclamo {
+	position: absolute;
+	left: 327px;
+	top: 270px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_Label_Pedido {
+	position: absolute;
+	left: 420px;
+	top: 315px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_button_registroCaso {
+	color: #000000;
+	font-family: Arial;
+	font-size: 18px;
+	position: absolute;
+	left: 35px;
+	top: 500px;
+	width: 200px;
+	height: 16px;
+	text-align: left;
+}
+
+#wb_radio_reclamo {
+	position: absolute;
+	left: 150px;
+	top: 1px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+#wb_radio_consulta {
+	position: absolute;
+	left: 310px;
+	top: 1px;
+	width: 200px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
+
+.Txt_NombreTutor {
+	position: absolute;
+	left: 120px;
+	top: 155px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 21;
+}
+
+.Txt_ApellidoP {
+	position: absolute;
+	left: 120px;
+	top: 55px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 23;
+}
+
+.Txt_Direccion {
+	position: absolute;
+	left: 120px;
+	top: 255px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 17;
+}
+
+#wb_Text_Clien {
+	position: absolute;
+	left: 215px;
+	top: 10px;
+	width: 43px;
+	height: 16px;
+	z-index: 9;
+	text-align: left;
+}
+
+#wb_Label_Email {
+	position: absolute;
+	left: 32px;
+	top: 210px;
+	width: 60px;
+	height: 16px;
+	z-index: 3;
+	text-align: left;
+}
+
+#wb_Label_Direccion {
+	position: absolute;
+	left: 30px;
+	top: 260px;
+	width: 72px;
+	height: 16px;
+	z-index: 0;
+	text-align: left;
+}
+
+#wb_Label_ApellidoM {
+	position: absolute;
+	left: 5px;
+	top: 110px;
+	width: 150px;
+	height: 16px;
+	z-index: 5;
+	text-align: left;
+}
+
+.Txt_Email {
+	position: absolute;
+	left: 120px;
+	top: 205px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 18;
+}
+
+#wb_Text_Line {
+	position: absolute;
+	left: 445px;
+	top: 130px;
+	width: 40px;
+	height: 16px;
+	z-index: 25;
+	text-align: left;
+}
+
+.Txt_Documento {
+	border-color: #000000;
+	position: absolute;
+	left: 145px;
+	top: 393px;
+	width: 98px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 6;
+}
+
+.Txt_DescripcionReclamo {
+	position: absolute;
+	left: 305px;
+	top: 485px;
+	width: 310px;
+	height: 50px;
+	line-height: 19px;
+	z-index: 6;
+}
+
+.Txt_BienContratado {
+	position: absolute;
+	left: 410px;
+	top: 35px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 6;
+}
+
+.Txt_ProductoServicio {
+	position: absolute;
+	left: 410px;
+	top: 65px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 6;
+}
+
+.Txt_ProdServic {
+	position: absolute;
+	left: 410px;
+	top: 115px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 6;
+}
+
+.Txt_MontoReclamo {
+	position: absolute;
+	left: 410px;
+	top: 265px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 6;
+}
+
+.Txt_Pedido {
+	position: absolute;
+	left: 305px;
+	top: 330px;
+	width: 310px;
+	height: 50px;
+	line-height: 19px;
+	z-index: 6;
+}
+
+#wb_Label_Nombre {
+	position: absolute;
+	left: 25px;
+	top: 10px;
+	width: 90px;
+	height: 16px;
+	z-index: 15;
+	text-align: left;
+}
+
+.Txt_nombre {
+	position: absolute;
+	left: 120px;
+	top: 5px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 14;
+}
+
+.Txt_ApellidoM {
+	position: absolute;
+	left: 120px;
+	top: 105px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 22;
+}
+
+.Txt_Telefono {
+	position: absolute;
+	left: 120px;
+	top: 305px;
+	width: 180px;
+	height: 19px;
+	line-height: 19px;
+	z-index: 20;
+}
+
+#wb_Form_Information {
+	border-style: double;
+	color: #AAAD84;
+	background-color: #F2F2F2;
+	position: absolute;
+	left: -50px;
+	top: 40px;
+	width: 685px;
+	height: 565px;
+	z-index: 54;
+}
+
+#wb_Label_Caso {
+	background-color: transparent;
+	border: 0px #000000 solid;
+	padding: 0;
+	text-align: left;
+}
+
+#wb_Label_Caso div {
+	text-align: left;
+}
+
+#wb_Label_Caso {
+	position: absolute;
+	left: 332px;
+	top: 220px;
+	width: 280px;
+	height: 16px;
+	z-index: 4;
+	text-align: left;
+}
